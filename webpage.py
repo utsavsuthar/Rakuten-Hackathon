@@ -33,5 +33,6 @@ if uploaded_file is not None:
     st.subheader("Model Output:")
     with st.spinner("Processing logs..."):
         output = process_logs(logs)
+        print("hii")
         st.write(output)
 
