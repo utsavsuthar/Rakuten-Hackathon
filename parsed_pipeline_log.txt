@@ -23,28 +23,7 @@ Skipped Stage: Docker Push Image
 Stage: Docker Push Image - Status: SUCCESS
 [Pipeline] { (Deploy)
 Skipped Stage: Deploy
-java.io.IOException: error=2, No such file or directory
-	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
-	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
-	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
-Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: e5b5e541-4bb4-4b23-adbe-a6b00650d70a
-Caused: java.io.IOException: Cannot run program "docker": error=2, No such file or directory
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
-	at hudson.Proc$LocalProc.<init>(Proc.java:252)
-	at hudson.Proc$LocalProc.<init>(Proc.java:221)
-	at hudson.Launcher$LocalLauncher.launch(Launcher.java:994)
-	at hudson.Launcher$ProcStarter.start(Launcher.java:506)
-	at hudson.Launcher$ProcStarter.join(Launcher.java:517)
-	at PluginClassLoader for docker-commons//org.jenkinsci.plugins.docker.commons.impl.RegistryKeyMaterialFactory.materialize(RegistryKeyMaterialFactory.java:102)
-	at PluginClassLoader for docker-workflow//org.jenkinsci.plugins.docker.workflow.AbstractEndpointStepExecution2.doStart(AbstractEndpointStepExecution2.java:53)
-	at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.GeneralNonBlockingStepExecution.lambda$run$0(GeneralNonBlockingStepExecution.java:77)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
+ERROR: docker login failed
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
 Finished: FAILURE

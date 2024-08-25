@@ -103,7 +103,7 @@ def parse_pipeline_log(file_path):
     return output, log_details
 
 # File path
-file_path = 'logs/#7.txt'
+file_path = 'logs/#31.txt'
 
 # Parse the log
 pipeline_info, log_details = parse_pipeline_log(file_path)
