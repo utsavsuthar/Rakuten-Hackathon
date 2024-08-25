@@ -1,0 +1,433 @@
+Started by user Sandhya
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /Users/sandhyas/.jenkins/workspace/Calculator
+[Pipeline] {
+[Pipeline] tool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Git-Checkout)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] git
+The recommended git tool is: NONE
+using credential git-cred
+ > git rev-parse --resolve-git-dir /Users/sandhyas/.jenkins/workspace/Calculator/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/sandhyasankar29/SIPCalculator.git # timeout=10
+Fetching upstream changes from https://github.com/sandhyasankar29/SIPCalculator.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.3 (Apple Git-146)'
+using GIT_ASKPASS to set credentials git-credential
+ > git fetch --tags --force --progress -- https://github.com/sandhyasankar29/SIPCalculator.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 4cd25bb2314e814597f280eea912f0d7b2ec4b93 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4cd25bb2314e814597f280eea912f0d7b2ec4b93 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D main # timeout=10
+ > git checkout -b main 4cd25bb2314e814597f280eea912f0d7b2ec4b93 # timeout=10
+Commit message: "Junit Test"
+ > git rev-list --no-walk 4cd25bb2314e814597f280eea912f0d7b2ec4b93 # timeout=10
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Compile)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ mvn clean compile
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.ra.busBooking:SIPCalculator:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-thymeleaf:jar -> duplicate declaration of version (?) @ line 29, column 15
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-test:jar -> duplicate declaration of version (?) @ line 38, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------< com.ra.busBooking:SIPCalculator >-------------------
+[INFO] Building SIPCalculator 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ SIPCalculator ---
+[INFO] Deleting /Users/sandhyas/.jenkins/workspace/Calculator/target
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ SIPCalculator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ SIPCalculator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /Users/sandhyas/.jenkins/workspace/Calculator/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.937 s
+[INFO] Finished at: 2024-08-25T21:51:23+05:30
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ mvn clean package -DskipTests
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.ra.busBooking:SIPCalculator:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-thymeleaf:jar -> duplicate declaration of version (?) @ line 29, column 15
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-test:jar -> duplicate declaration of version (?) @ line 38, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------< com.ra.busBooking:SIPCalculator >-------------------
+[INFO] Building SIPCalculator 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ SIPCalculator ---
+[INFO] Deleting /Users/sandhyas/.jenkins/workspace/Calculator/target
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ SIPCalculator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ SIPCalculator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /Users/sandhyas/.jenkins/workspace/Calculator/target/classes
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ SIPCalculator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /Users/sandhyas/.jenkins/workspace/Calculator/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ SIPCalculator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /Users/sandhyas/.jenkins/workspace/Calculator/target/test-classes
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ SIPCalculator ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.2.2:jar (default-jar) @ SIPCalculator ---
+[INFO] Building jar: /Users/sandhyas/.jenkins/workspace/Calculator/target/SIPCalculator-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:2.7.3:repackage (repackage) @ SIPCalculator ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.408 s
+[INFO] Finished at: 2024-08-25T21:51:26+05:30
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ mvn clean test
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.ra.busBooking:SIPCalculator:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-thymeleaf:jar -> duplicate declaration of version (?) @ line 29, column 15
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter-test:jar -> duplicate declaration of version (?) @ line 38, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------< com.ra.busBooking:SIPCalculator >-------------------
+[INFO] Building SIPCalculator 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.20.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ SIPCalculator ---
+[INFO] Deleting /Users/sandhyas/.jenkins/workspace/Calculator/target
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ SIPCalculator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ SIPCalculator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /Users/sandhyas/.jenkins/workspace/Calculator/target/classes
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ SIPCalculator ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /Users/sandhyas/.jenkins/workspace/Calculator/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ SIPCalculator ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /Users/sandhyas/.jenkins/workspace/Calculator/target/test-classes
+[INFO] 
+[INFO] --- surefire:2.22.2:test (default-test) @ SIPCalculator ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.sipCalculator.SipCalculatorApplicationTests
+21:51:29.211 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+21:51:29.215 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+21:51:29.246 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.sipCalculator.SipCalculatorApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+21:51:29.250 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.sipCalculator.SipCalculatorApplicationTests], using SpringBootContextLoader
+21:51:29.251 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.sipCalculator.SipCalculatorApplicationTests]: class path resource [com/sipCalculator/SipCalculatorApplicationTests-context.xml] does not exist
+21:51:29.252 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.sipCalculator.SipCalculatorApplicationTests]: class path resource [com/sipCalculator/SipCalculatorApplicationTestsContext.groovy] does not exist
+21:51:29.252 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.sipCalculator.SipCalculatorApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+21:51:29.252 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.sipCalculator.SipCalculatorApplicationTests]: SipCalculatorApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:51:29.267 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.sipCalculator.SipCalculatorApplicationTests]
+21:51:29.287 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/sandhyas/.jenkins/workspace/Calculator/target/classes/com/sipCalculator/SipCalculatorApplication.class]
+21:51:29.287 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.sipCalculator.SipCalculatorApplication for test class com.sipCalculator.SipCalculatorApplicationTests
+21:51:29.322 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.sipCalculator.SipCalculatorApplicationTests]: using defaults.
+21:51:29.323 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+21:51:29.327 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+21:51:29.327 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+21:51:29.327 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b0f373b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2ceb80a1, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4b45dcb8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7216fb24, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2072acb2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@50ecde95, org.springframework.test.context.event.EventPublishingTestExecutionListener@35a9782c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@70a36a66, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@45815ffc, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@732f29af, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@d3957fe, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6622fc65, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@299321e2]
+21:51:29.328 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@7cbc3762 testClass = SipCalculatorApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3a6f2de3 testClass = SipCalculatorApplicationTests, locations = '{}', classes = '{class com.sipCalculator.SipCalculatorApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3b6d844d, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@10289886, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@45efd90f, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@2f01783a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1f760b47, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@16e7dcfd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.3)
+
+2024-08-25 21:51:29.457  INFO 16045 --- [           main] c.s.SipCalculatorApplicationTests        : Starting SipCalculatorApplicationTests using Java 17.0.10 on Sandhyas-MacBook-Air.local with PID 16045 (started by sandhyas in /Users/sandhyas/.jenkins/workspace/Calculator)
+2024-08-25 21:51:29.458  INFO 16045 --- [           main] c.s.SipCalculatorApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2024-08-25 21:51:30.040  INFO 16045 --- [           main] c.s.SipCalculatorApplicationTests        : Started SipCalculatorApplicationTests in 0.698 seconds (JVM running for 1.163)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.028 s - in com.sipCalculator.SipCalculatorApplicationTests
+[INFO] Running com.sipCalculator.controller.SIPControllerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.sipCalculator.controller.SIPControllerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.632 s
+[INFO] Finished at: 2024-08-25T21:51:31+05:30
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Sonar-Analytics)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withSonarQubeEnv
+Injecting SonarQube environment variables using the configuration: sonar-server
+[Pipeline] {
+[Pipeline] sh
++ /Users/sandhyas/.jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner -Dsonar.projectName=SIPCalculator-app -Dsonar.projectKey=SIPCalculator -Dsonar.java.binaries=target
+21:51:32.572 INFO  Scanner configuration file: /Users/sandhyas/.jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/conf/sonar-scanner.properties
+21:51:32.574 INFO  Project root configuration file: NONE
+21:51:32.585 INFO  SonarScanner CLI 6.1.0.4477
+21:51:32.586 INFO  Java 17.0.10 Eclipse Adoptium (64-bit)
+21:51:32.586 INFO  Mac OS X 14.6 aarch64
+21:51:32.603 INFO  User cache: /Users/sandhyas/.sonar/cache
+21:51:32.941 INFO  Communicating with SonarQube Server 9.9.6.92038
+21:51:33.159 INFO  Load global settings
+21:51:33.222 INFO  Load global settings (done) | time=63ms
+21:51:33.223 INFO  Server id: 147B411E-AZGFa0WK4yNs8UkEp0GD
+21:51:33.225 INFO  User cache: /Users/sandhyas/.sonar/cache
+21:51:33.226 INFO  Load/download plugins
+21:51:33.226 INFO  Load plugins index
+21:51:33.249 INFO  Load plugins index (done) | time=23ms
+21:51:33.296 INFO  Load/download plugins (done) | time=70ms
+21:51:33.553 INFO  Process project properties
+21:51:33.553 INFO  Process project properties (done) | time=0ms
+21:51:33.555 INFO  Execute project builders
+21:51:33.556 INFO  Execute project builders (done) | time=1ms
+21:51:33.559 INFO  Project key: SIPCalculator
+21:51:33.559 INFO  Base dir: /Users/sandhyas/.jenkins/workspace/Calculator
+21:51:33.559 INFO  Working dir: /Users/sandhyas/.jenkins/workspace/Calculator/.scannerwork
+21:51:33.563 INFO  Load project settings for component key: 'SIPCalculator'
+21:51:33.613 INFO  Load project settings for component key: 'SIPCalculator' (done) | time=50ms
+21:51:33.721 INFO  Auto-configuring with CI 'Jenkins'
+21:51:33.722 INFO  Load quality profiles
+21:51:33.844 INFO  Load quality profiles (done) | time=122ms
+21:51:33.847 INFO  Load active rules
+21:51:35.132 INFO  Load active rules (done) | time=1285ms
+21:51:35.136 INFO  Load analysis cache
+21:51:35.151 INFO  Load analysis cache (249 bytes) | time=15ms
+21:51:35.188 INFO  Load project repositories
+21:51:35.208 INFO  Load project repositories (done) | time=20ms
+21:51:35.233 INFO  Indexing files...
+21:51:35.234 INFO  Project configuration:
+21:51:35.658 INFO  12 files indexed
+21:51:35.658 INFO  15 files ignored because of scm ignore settings
+21:51:35.659 INFO  Quality profile for java: Sonar way
+21:51:35.660 INFO  Quality profile for web: Sonar way
+21:51:35.660 INFO  Quality profile for xml: Sonar way
+21:51:35.660 INFO  ------------- Run sensors on module SIPCalculator-app
+21:51:35.704 INFO  Load metrics repository
+21:51:35.720 INFO  Load metrics repository (done) | time=15ms
+21:51:36.425 INFO  Sensor JavaSensor [java]
+21:51:36.428 INFO  Configured Java source version (sonar.java.source): none
+21:51:36.429 INFO  JavaClasspath initialization
+21:51:36.430 INFO  JavaClasspath initialization (done) | time=1ms
+21:51:36.430 INFO  JavaTestClasspath initialization
+21:51:36.431 INFO  JavaTestClasspath initialization (done) | time=1ms
+21:51:36.434 INFO  Server-side caching is enabled. The Java analyzer will not try to leverage data from a previous analysis.
+21:51:36.435 INFO  Using ECJ batch to parse 5 Main java source files with batch size 107 KB.
+21:51:36.530 INFO  Starting batch processing.
+21:51:36.787 INFO  The Java analyzer cannot skip unchanged files in this context. A full analysis is performed for all files.
+21:51:37.020 INFO  100% analyzed
+21:51:37.020 INFO  Batch processing: Done.
+21:51:37.020 INFO  Did not optimize analysis for any files, performed a full analysis for all 5 files.
+21:51:37.021 WARN  Dependencies/libraries were not provided for analysis of SOURCE files. The 'sonar.java.libraries' property is empty. Verify your configuration, as you might end up with less precise results.
+21:51:37.021 WARN  Unresolved imports/types have been detected during analysis. Enable DEBUG mode to see them.
+21:51:37.021 WARN  Use of preview features have been detected during analysis. Enable DEBUG mode to see them.
+21:51:37.021 INFO  No "Test" source files to scan.
+21:51:37.021 INFO  No "Generated" source files to scan.
+21:51:37.021 INFO  Sensor JavaSensor [java] (done) | time=596ms
+21:51:37.021 INFO  Sensor JaCoCo XML Report Importer [jacoco]
+21:51:37.022 INFO  'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+21:51:37.022 INFO  No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+21:51:37.022 INFO  Sensor JaCoCo XML Report Importer [jacoco] (done) | time=1ms
+21:51:37.022 INFO  Sensor CSS Rules [javascript]
+21:51:40.528 WARN  Node.js version 22 is not recommended, you might experience issues. Please use a recommended version of Node.js [16, 18]
+21:51:40.530 INFO  1 source file to be analyzed
+21:51:40.666 INFO  1/1 source file has been analyzed
+21:51:40.667 INFO  Hit the cache for 0 out of 0
+21:51:40.667 INFO  Miss the cache for 0 out of 0
+21:51:40.667 INFO  Sensor CSS Rules [javascript] (done) | time=3645ms
+21:51:40.667 INFO  Sensor C# Project Type Information [csharp]
+21:51:40.668 INFO  Sensor C# Project Type Information [csharp] (done) | time=1ms
+21:51:40.668 INFO  Sensor C# Analysis Log [csharp]
+21:51:40.677 INFO  Sensor C# Analysis Log [csharp] (done) | time=9ms
+21:51:40.677 INFO  Sensor C# Properties [csharp]
+21:51:40.677 INFO  Sensor C# Properties [csharp] (done) | time=0ms
+21:51:40.677 INFO  Sensor SurefireSensor [java]
+21:51:40.677 INFO  parsing [/Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports]
+21:51:40.705 INFO  Sensor SurefireSensor [java] (done) | time=28ms
+21:51:40.705 INFO  Sensor HTML [web]
+21:51:40.732 INFO  Sensor HTML [web] (done) | time=27ms
+21:51:40.733 INFO  Sensor XML Sensor [xml]
+21:51:40.746 INFO  1 source file to be analyzed
+21:51:40.819 INFO  1/1 source file has been analyzed
+21:51:40.819 INFO  Sensor XML Sensor [xml] (done) | time=86ms
+21:51:40.819 INFO  Sensor TextAndSecretsSensor [text]
+21:51:40.823 INFO  7 source files to be analyzed
+21:51:40.829 INFO  7/7 source files have been analyzed
+21:51:40.829 INFO  Sensor TextAndSecretsSensor [text] (done) | time=10ms
+21:51:40.829 INFO  Sensor VB.NET Project Type Information [vbnet]
+21:51:40.830 INFO  Sensor VB.NET Project Type Information [vbnet] (done) | time=1ms
+21:51:40.830 INFO  Sensor VB.NET Analysis Log [vbnet]
+21:51:40.837 INFO  Sensor VB.NET Analysis Log [vbnet] (done) | time=7ms
+21:51:40.838 INFO  Sensor VB.NET Properties [vbnet]
+21:51:40.838 INFO  Sensor VB.NET Properties [vbnet] (done) | time=0ms
+21:51:40.838 INFO  Sensor IaC Docker Sensor [iac]
+21:51:40.839 INFO  0 source files to be analyzed
+21:51:40.865 INFO  0/0 source files have been analyzed
+21:51:40.865 INFO  Sensor IaC Docker Sensor [iac] (done) | time=27ms
+21:51:40.867 INFO  ------------- Run sensors on project
+21:51:40.906 INFO  Sensor Analysis Warnings import [csharp]
+21:51:40.907 INFO  Sensor Analysis Warnings import [csharp] (done) | time=1ms
+21:51:40.907 INFO  Sensor Zero Coverage Sensor
+21:51:40.912 INFO  Sensor Zero Coverage Sensor (done) | time=5ms
+21:51:40.912 INFO  Sensor Java CPD Block Indexer
+21:51:40.919 INFO  Sensor Java CPD Block Indexer (done) | time=7ms
+21:51:40.924 INFO  CPD Executor 2 files had no CPD blocks
+21:51:40.924 INFO  CPD Executor Calculating CPD for 4 files
+21:51:40.928 INFO  CPD Executor CPD calculation finished (done) | time=4ms
+21:51:40.972 INFO  Analysis report generated in 42ms, dir size=143.1 kB
+21:51:40.994 INFO  Analysis report compressed in 22ms, zip size=31.0 kB
+21:51:41.060 INFO  Analysis report uploaded in 66ms
+21:51:41.061 INFO  ANALYSIS SUCCESSFUL, you can find the results at: http://localhost:9000/dashboard?id=SIPCalculator
+21:51:41.061 INFO  Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+21:51:41.061 INFO  More about the report processing at http://localhost:9000/api/ce/task?id=AZGKV-Iy4yNs8UkEp9_g
+21:51:42.407 INFO  Analysis total time: 9.067 s
+21:51:42.411 INFO  EXECUTION SUCCESS
+21:51:42.412 INFO  Total time: 9.855s
+[Pipeline] }
+[Pipeline] // withSonarQubeEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ cd target
++ java -jar your-jar-file-name.jar
+Error: Unable to access jarfile your-jar-file-name.jar
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
