@@ -1,0 +1,6 @@
+.DS_Store
+env
+Scripts/encoder_model
+Scripts/encoder_model/variables
+Scripts/encoder_model/saved_model.pb
+__pycache__

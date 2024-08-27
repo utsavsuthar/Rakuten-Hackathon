@@ -1,6 +1,10 @@
 import re
 import os
 import csv
+import uuid
+def generate_random_filename(extension='txt'):
+    return f"{uuid.uuid4().hex}.{extension}"
+
 def parse_pipeline_log(file_path):
     with open(file_path, 'r') as file:
         log_data = file.readlines()
@@ -56,14 +60,7 @@ def parse_pipeline_log(file_path):
                     output.append(f"Stage: {stage_name} - Status: IN PROGRESS")   # Add stage start line
                     log_details.append(next_line)  # Add stage detail line
                     continue
-
-        # Check for errors or exceptions
-        # error_match = error_pattern.search(line)
-        # if error_match:
-        #     log_details.append(line)
-        #     if stages:
-        #         output[-1] = f"Stage: {stages[-1]} - Status: FAILURE"
-        #     continue
+ 
 
         # Check for skipped stages
         skipped_stage_match = skipped_stage_pattern.search(line)
@@ -72,16 +69,6 @@ def parse_pipeline_log(file_path):
             output.append(f"Skipped Stage: {skipped_stage_match.group(1)}")
             # log_details.append(line)
             continue
-
-        # Check for pipeline success
-        # if success_pattern.search(line):
-        #     if stages:
-        #         log_details.append(f"Stage: {stages[-1]} - Status: SUCCESS\n")
-        #         output[-1] = f"Stage: {stages[-1]} - Status: SUCCESS"
-        #     # log_details.append("Pipeline Status: SUCCESS\n")
-        #     output.append("Pipeline Status: SUCCESS")
-            # log_details.append(line)
-            
 
         # Check for pipeline failure
         if failure_pattern.search(line):
@@ -92,8 +79,6 @@ def parse_pipeline_log(file_path):
             log_details.append(line)
             # break
 
-        # Add other log details as they appear in the file
-        # log_details.append(line)
 
     # Handle the last stage if it was not explicitly succeeded or failed
     if stages and ("Pipeline Status" not in output[-1]):
@@ -103,60 +88,53 @@ def parse_pipeline_log(file_path):
 
     return output, log_details
 
-# # File path
-# file_path = 'logs/#31.txt'
 
-# # Parse the log
-# pipeline_info, log_details = parse_pipeline_log(file_path)
 
-# # # Print the summary results
-# # for entry in pipeline_info:
-# #     print(entry)
 
-# # Write the detailed output to a file
-# output_file_path = 'parsed_pipeline_log.txt'
-# with open(output_file_path, 'w') as output_file:
-#     for entry in log_details:
-#         output_file.write(entry)
-#     output_file.write("\nSummary:\n")
-#     for entry in pipeline_info:
-#         output_file.write(entry + '\n')
+
+
+
+
+
+
+
+
 # Directory containing log files
-log_directory = 'logs'
+# log_directory = 'logs'
 
-# Output CSV file path
-csv_output_file = 'parsed_pipeline_logs.csv'
+# # Output CSV file path
+# csv_output_file = 'parsed_pipeline_logs.csv'
 
-# Initialize a list to hold all rows
-csv_rows = []
+# # Initialize a list to hold all rows
+# csv_rows = []
 
-# Initialize a global index counter
-global_index = 1
+# # Initialize a global index counter
+# global_index = 1
 
-# Read all log files from the directory
-for log_file in os.listdir(log_directory):
-    log_file_path = os.path.join(log_directory, log_file)
+# # Read all log files from the directory
+# for log_file in os.listdir(log_directory):
+#     log_file_path = os.path.join(log_directory, log_file)
     
-    # Skip non-log files (only process .txt files)
-    if not log_file.endswith('.txt'):
-        continue
+#     # Skip non-log files (only process .txt files)
+#     if not log_file.endswith('.txt'):
+#         continue
     
-    # Parse the log file
-    _, log_details = parse_pipeline_log(log_file_path)
+#     # Parse the log file
+#     _, log_details = parse_pipeline_log(log_file_path)
     
-    # Combine all log details into a single string
-    combined_log_details = ''.join(log_details).strip()
+#     # Combine all log details into a single string
+#     combined_log_details = ''.join(log_details).strip()
     
-    # Add a single row for the current file
-    csv_rows.append([global_index, combined_log_details])
+#     # Add a single row for the current file
+#     csv_rows.append([global_index, combined_log_details])
     
-    # Increment the global index for the next file
-    global_index += 1
+#     # Increment the global index for the next file
+#     global_index += 1
 
-# Write to CSV
-with open(csv_output_file, 'w', newline='') as csvfile:
-    csv_writer = csv.writer(csvfile)
-    csv_writer.writerow(['Index', 'Description'])  # Write header
-    csv_writer.writerows(csv_rows)
+# # Write to CSV
+# with open(csv_output_file, 'w', newline='') as csvfile:
+#     csv_writer = csv.writer(csvfile)
+#     csv_writer.writerow(['Index', 'Description'])  # Write header
+#     csv_writer.writerows(csv_rows)
 
-print(f"Log details have been written to {csv_output_file}")
+# print(f"Log details have been written to {csv_output_file}")

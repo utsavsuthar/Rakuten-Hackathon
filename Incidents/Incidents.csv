@@ -1,5 +1,5 @@
-Index,Description
-1,"[Pipeline] { (Declarative: Tool Install)
+Incident Number,Company Name,Problem Title,Incident Severity,Error Description,Pipeline Stage Summary,Primary Error,Solution
+1,Rakuten,Error: Unable to access jarfile SIPCalculator-0.0.1-SNAPSHOT.jar,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -19,8 +19,8 @@ Error: Unable to access jarfile SIPCalculator-0.0.1-SNAPSHOT.jar
 ERROR: script returned exit code 1
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
-Finished: FAILURE"
-2,"[Pipeline] { (Declarative: Tool Install)
+Finished: FAILURE",,,
+2,Rakuten,SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -69,8 +69,8 @@ Skipped Stage: Deploy
 ERROR: script returned exit code 1
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
-Finished: FAILURE"
-3,"[Pipeline] { (Declarative: Tool Install)
+Finished: FAILURE",,,
+3,Rakuten,ERROR: docker login failed,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -98,8 +98,8 @@ Skipped Stage: Deploy
 ERROR: docker login failed
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
-Finished: FAILURE"
-4,"[Pipeline] { (Declarative: Tool Install)
+Finished: FAILURE",,,
+4,Rakuten,"java.io.IOException: error=2, No such file or directory",,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -125,31 +125,31 @@ Stage: Docker Push Image - Status: SUCCESS
 [Pipeline] { (Deploy)
 Skipped Stage: Deploy
 java.io.IOException: error=2, No such file or directory
-	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
-	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
-	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+        at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+        at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+        at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+        at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
 Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: e5b5e541-4bb4-4b23-adbe-a6b00650d70a
 Caused: java.io.IOException: Cannot run program ""docker"": error=2, No such file or directory
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
-	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
-	at hudson.Proc$LocalProc.<init>(Proc.java:252)
-	at hudson.Proc$LocalProc.<init>(Proc.java:221)
-	at hudson.Launcher$LocalLauncher.launch(Launcher.java:994)
-	at hudson.Launcher$ProcStarter.start(Launcher.java:506)
-	at hudson.Launcher$ProcStarter.join(Launcher.java:517)
-	at PluginClassLoader for docker-commons//org.jenkinsci.plugins.docker.commons.impl.RegistryKeyMaterialFactory.materialize(RegistryKeyMaterialFactory.java:102)
-	at PluginClassLoader for docker-workflow//org.jenkinsci.plugins.docker.workflow.AbstractEndpointStepExecution2.doStart(AbstractEndpointStepExecution2.java:53)
-	at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.GeneralNonBlockingStepExecution.lambda$run$0(GeneralNonBlockingStepExecution.java:77)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
+        at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+        at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+        at hudson.Proc$LocalProc.<init>(Proc.java:252)
+        at hudson.Proc$LocalProc.<init>(Proc.java:221)
+        at hudson.Launcher$LocalLauncher.launch(Launcher.java:994)
+        at hudson.Launcher$ProcStarter.start(Launcher.java:506)
+        at hudson.Launcher$ProcStarter.join(Launcher.java:517)
+        at PluginClassLoader for docker-commons//org.jenkinsci.plugins.docker.commons.impl.RegistryKeyMaterialFactory.materialize(RegistryKeyMaterialFactory.java:102)
+        at PluginClassLoader for docker-workflow//org.jenkinsci.plugins.docker.workflow.AbstractEndpointStepExecution2.doStart(AbstractEndpointStepExecution2.java:53)
+        at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.GeneralNonBlockingStepExecution.lambda$run$0(GeneralNonBlockingStepExecution.java:77)
+        at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+        at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+        at java.base/java.lang.Thread.run(Thread.java:1583)
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
-Finished: FAILURE"
-5,"[Pipeline] { (Declarative: Tool Install)
+Finished: FAILURE",,,
+5,Rakuten,Error: Unable to access jarfile your-jar-file-name.jar,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -169,8 +169,8 @@ Error: Unable to access jarfile your-jar-file-name.jar
 ERROR: script returned exit code 1
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
-Finished: FAILURE"
-6,"[Pipeline] { (Declarative: Tool Install)
+Finished: FAILURE",,,
+6,Rakuten,ERROR: docker login failed,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -198,8 +198,8 @@ Skipped Stage: Deploy
 ERROR: docker login failed
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
-Finished: FAILURE"
-7,"[Pipeline] { (Declarative: Tool Install)
+Finished: FAILURE",,,
+7,Rakuten,ERROR Error during SonarScanner CLI execution,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -215,32 +215,32 @@ Stage: Test - Status: SUCCESS
 [Pipeline] { (Sonar-Analytics)
 21:42:28.195 ERROR Error during SonarScanner CLI execution
 java.lang.IllegalStateException: Failed to upload report: Error 500 on http://localhost:9000/api/ce/submit?projectKey=SIPCalculator&projectName=Blogging-app : {""errors"":[{""msg"":""An error has occurred. Please contact your administrator""}]}
-	at org.sonar.scanner.report.ReportPublisher.upload(ReportPublisher.java:226)
-	at org.sonar.scanner.report.ReportPublisher.execute(ReportPublisher.java:154)
-	at org.sonar.scanner.scan.SpringProjectScanContainer.doAfterStart(SpringProjectScanContainer.java:376)
-	at org.sonar.core.platform.SpringComponentContainer.startComponents(SpringComponentContainer.java:188)
-	at org.sonar.core.platform.SpringComponentContainer.execute(SpringComponentContainer.java:167)
-	at org.sonar.scanner.bootstrap.SpringGlobalContainer.doAfterStart(SpringGlobalContainer.java:137)
-	at org.sonar.core.platform.SpringComponentContainer.startComponents(SpringComponentContainer.java:188)
-	at org.sonar.core.platform.SpringComponentContainer.execute(SpringComponentContainer.java:167)
-	at org.sonar.batch.bootstrapper.Batch.doExecute(Batch.java:72)
-	at org.sonar.batch.bootstrapper.Batch.execute(Batch.java:66)
-	at org.sonarsource.scanner.lib.internal.batch.BatchIsolatedLauncher.execute(BatchIsolatedLauncher.java:41)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.sonarsource.scanner.lib.internal.IsolatedLauncherProxy.invoke(IsolatedLauncherProxy.java:62)
-	at jdk.proxy3/jdk.proxy3.$Proxy2.execute(Unknown Source)
-	at org.sonarsource.scanner.lib.InProcessScannerEngineFacade.doAnalyze(InProcessScannerEngineFacade.java:39)
-	at org.sonarsource.scanner.lib.Scann erEngineFacade.analyze(ScannerEngineFacade.java:61)
-	at org.sonarsource.scanner.cli.Main.analyze(Main.java:77)
-	at org.sonarsource.scanner.cli.Main.main(Main.java:63)
+        at org.sonar.scanner.report.ReportPublisher.upload(ReportPublisher.java:226)
+        at org.sonar.scanner.report.ReportPublisher.execute(ReportPublisher.java:154)
+        at org.sonar.scanner.scan.SpringProjectScanContainer.doAfterStart(SpringProjectScanContainer.java:376)
+        at org.sonar.core.platform.SpringComponentContainer.startComponents(SpringComponentContainer.java:188)
+        at org.sonar.core.platform.SpringComponentContainer.execute(SpringComponentContainer.java:167)
+        at org.sonar.scanner.bootstrap.SpringGlobalContainer.doAfterStart(SpringGlobalContainer.java:137)
+        at org.sonar.core.platform.SpringComponentContainer.startComponents(SpringComponentContainer.java:188)
+        at org.sonar.core.platform.SpringComponentContainer.execute(SpringComponentContainer.java:167)
+        at org.sonar.batch.bootstrapper.Batch.doExecute(Batch.java:72)
+        at org.sonar.batch.bootstrapper.Batch.execute(Batch.java:66)
+        at org.sonarsource.scanner.lib.internal.batch.BatchIsolatedLauncher.execute(BatchIsolatedLauncher.java:41)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+        at org.sonarsource.scanner.lib.internal.IsolatedLauncherProxy.invoke(IsolatedLauncherProxy.java:62)
+        at jdk.proxy3/jdk.proxy3.$Proxy2.execute(Unknown Source)
+        at org.sonarsource.scanner.lib.InProcessScannerEngineFacade.doAnalyze(InProcessScannerEngineFacade.java:39)
+        at org.sonarsource.scanner.lib.Scann erEngineFacade.analyze(ScannerEngineFacade.java:61)
+        at org.sonarsource.scanner.cli.Main.analyze(Main.java:77)
+        at org.sonarsource.scanner.cli.Main.main(Main.java:63)
 Caused by: org.sonarqube.ws.client.HttpException: Error 500 on http://localhost:9000/api/ce/submit?projectKey=SIPCalculator&projectName=Blogging-app : {""errors"":[{""msg"":""An error has occurred. Please contact your administrator""}]}
-	at org.sonarqube.ws.client.BaseResponse.failIfNotSuccessful(BaseResponse.java:36)
-	at org.sonar.scanner.bootstrap.DefaultScannerWsClient.failIfUnauthorized(DefaultScannerWsClient.java:126)
-	at org.sonar.scanner.bootstrap.DefaultScannerWsClient.call(DefaultScannerWsClient.java:89)
-	at org.sonar.scanner.report.ReportPublisher.upload(ReportPublisher.java:224)
+        at org.sonarqube.ws.client.BaseResponse.failIfNotSuccessful(BaseResponse.java:36)
+        at org.sonar.scanner.bootstrap.DefaultScannerWsClient.failIfUnauthorized(DefaultScannerWsClient.java:126)
+        at org.sonar.scanner.bootstrap.DefaultScannerWsClient.call(DefaultScannerWsClient.java:89)
+        at org.sonar.scanner.report.ReportPublisher.upload(ReportPublisher.java:224)
 21:42:28.197 ERROR 
 21:42:28.197 ERROR Re-run SonarScanner CLI using the -X switch to enable full debug logging.
 Stage: Sonar-Analytics - Status: SUCCESS
@@ -249,23 +249,23 @@ Skipped Stage: Deploy
 ERROR: script returned exit code 1
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
-Finished: FAILURE"
-8,"[Pipeline] { (Declarative: Tool Install)
+Finished: FAILURE",,,
+8,Rakuten,ava.io.IOException: Unable to locate binary. A release might not exist for the selected combination. ,,"[Pipeline] { (Declarative: Tool Install)
 java.io.IOException: Unable to locate binary. A release might not exist for the selected combination. ID: jdk8u422-b05.1, Platform: MACOS, CPU: arm
-	at PluginClassLoader for adoptopenjdk//io.jenkins.plugins.adoptopenjdk.AdoptOpenJDKInstaller.performInstallation(AdoptOpenJDKInstaller.java:117)
-	at hudson.tools.InstallerTranslator.getToolHome(InstallerTranslator.java:70)
-	at hudson.tools.ToolLocationNodeProperty.getToolHome(ToolLocationNodeProperty.java:109)
-	at hudson.tools.ToolInstallation.translateFor(ToolInstallation.java:221)
-	at hudson.model.JDK.forNode(JDK.java:150)
-	at hudson.model.JDK.forNode(JDK.java:60)
-	at PluginClassLoader for workflow-basic-steps//org.jenkinsci.plugins.workflow.steps.ToolStep$Execution.run(ToolStep.java:157)
-	at PluginClassLoader for workflow-basic-steps//org.jenkinsci.plugins.workflow.steps.ToolStep$Execution.run(ToolStep.java:138)
-	at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:47)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
+        at PluginClassLoader for adoptopenjdk//io.jenkins.plugins.adoptopenjdk.AdoptOpenJDKInstaller.performInstallation(AdoptOpenJDKInstaller.java:117)
+        at hudson.tools.InstallerTranslator.getToolHome(InstallerTranslator.java:70)
+        at hudson.tools.ToolLocationNodeProperty.getToolHome(ToolLocationNodeProperty.java:109)
+        at hudson.tools.ToolInstallation.translateFor(ToolInstallation.java:221)
+        at hudson.model.JDK.forNode(JDK.java:150)
+        at hudson.model.JDK.forNode(JDK.java:60)
+        at PluginClassLoader for workflow-basic-steps//org.jenkinsci.plugins.workflow.steps.ToolStep$Execution.run(ToolStep.java:157)
+        at PluginClassLoader for workflow-basic-steps//org.jenkinsci.plugins.workflow.steps.ToolStep$Execution.run(ToolStep.java:138)
+        at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:47)
+        at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+        at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+        at java.base/java.lang.Thread.run(Thread.java:1583)
 Finished: FAILURE
 Stage: Declarative: Tool Install - Status: FAILURE
-Finished: FAILURE"
+Finished: FAILURE",,,

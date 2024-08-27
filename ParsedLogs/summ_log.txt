@@ -1,0 +1,19 @@
+[Pipeline] { (Declarative: Tool Install)
+java.io.IOException: Unable to locate binary. A release might not exist for the selected combination. ID: jdk8u422-b05.1, Platform: MACOS, CPU: arm
+	at PluginClassLoader for adoptopenjdk//io.jenkins.plugins.adoptopenjdk.AdoptOpenJDKInstaller.performInstallation(AdoptOpenJDKInstaller.java:117)
+	at hudson.tools.InstallerTranslator.getToolHome(InstallerTranslator.java:70)
+	at hudson.tools.ToolLocationNodeProperty.getToolHome(ToolLocationNodeProperty.java:109)
+	at hudson.tools.ToolInstallation.translateFor(ToolInstallation.java:221)
+	at hudson.model.JDK.forNode(JDK.java:150)
+	at hudson.model.JDK.forNode(JDK.java:60)
+	at PluginClassLoader for workflow-basic-steps//org.jenkinsci.plugins.workflow.steps.ToolStep$Execution.run(ToolStep.java:157)
+	at PluginClassLoader for workflow-basic-steps//org.jenkinsci.plugins.workflow.steps.ToolStep$Execution.run(ToolStep.java:138)
+	at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:47)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Finished: FAILURE
+Stage: Declarative: Tool Install - Status: FAILURE
+Finished: FAILURE
