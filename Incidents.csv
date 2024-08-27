@@ -1,5 +1,5 @@
-Unnamed: 0,Incident Number,Company Name,Problem Title,Incident Severity,Error log,Pipeline Stage Summary,Primary Error,Solution
-0,1,Rakuten,Error: Unable to access jarfile SIPCalculator-0.0.1-SNAPSHOT.jar,,"[Pipeline] { (Declarative: Tool Install)
+Incident Number,Company Name,Problem Title,Incident Severity,Error log,Pipeline Stage Summary,Primary Error,Solution
+1,Rakuten,Error: Unable to access jarfile SIPCalculator-0.0.1-SNAPSHOT.jar,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -20,7 +20,7 @@ ERROR: script returned exit code 1
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
 Finished: FAILURE",,,
-1,2,Rakuten,SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>,,"[Pipeline] { (Declarative: Tool Install)
+2,Rakuten,SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -70,7 +70,7 @@ ERROR: script returned exit code 1
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
 Finished: FAILURE",,,
-2,3,Rakuten,ERROR: docker login failed,,"[Pipeline] { (Declarative: Tool Install)
+3,Rakuten,ERROR: docker login failed,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -99,7 +99,7 @@ ERROR: docker login failed
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
 Finished: FAILURE",,,
-3,4,Rakuten,"java.io.IOException: error=2, No such file or directory",,"[Pipeline] { (Declarative: Tool Install)
+4,Rakuten,"java.io.IOException: error=2, No such file or directory",,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -149,7 +149,7 @@ Caused: java.io.IOException: Cannot run program ""docker"": error=2, No such fil
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
 Finished: FAILURE",,,
-4,5,Rakuten,Error: Unable to access jarfile your-jar-file-name.jar,,"[Pipeline] { (Declarative: Tool Install)
+5,Rakuten,Error: Unable to access jarfile your-jar-file-name.jar,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -170,7 +170,7 @@ ERROR: script returned exit code 1
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
 Finished: FAILURE",,,
-5,6,Rakuten,ERROR: docker login failed,,"[Pipeline] { (Declarative: Tool Install)
+6,Rakuten,ERROR: docker login failed,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -199,7 +199,7 @@ ERROR: docker login failed
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
 Finished: FAILURE",,,
-6,7,Rakuten,ERROR Error during SonarScanner CLI execution,,"[Pipeline] { (Declarative: Tool Install)
+7,Rakuten,ERROR Error during SonarScanner CLI execution,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -250,7 +250,7 @@ ERROR: script returned exit code 1
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
 Finished: FAILURE",,,
-7,8,Rakuten,ava.io.IOException: Unable to locate binary. A release might not exist for the selected combination. ,,"[Pipeline] { (Declarative: Tool Install)
+8,Rakuten,ava.io.IOException: Unable to locate binary. A release might not exist for the selected combination. ,,"[Pipeline] { (Declarative: Tool Install)
 java.io.IOException: Unable to locate binary. A release might not exist for the selected combination. ID: jdk8u422-b05.1, Platform: MACOS, CPU: arm
         at PluginClassLoader for adoptopenjdk//io.jenkins.plugins.adoptopenjdk.AdoptOpenJDKInstaller.performInstallation(AdoptOpenJDKInstaller.java:117)
         at hudson.tools.InstallerTranslator.getToolHome(InstallerTranslator.java:70)
@@ -269,7 +269,7 @@ java.io.IOException: Unable to locate binary. A release might not exist for the 
 Finished: FAILURE
 Stage: Declarative: Tool Install - Status: FAILURE
 Finished: FAILURE",,,
-8,9,Rakuten,,,"[Pipeline] { (Declarative: Tool Install)
+9,Rakuten,,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -292,7 +292,7 @@ Stage: Docker Push Image - Status: SUCCESS
 Finished: SUCCESS
 Stage: Deploy - Status: SUCCESS
 ",,,
-9,10,Rakuten,Test Failure and Maven Build Failure,Medium,"[Pipeline] { (Declarative: Tool Install)
+10,Rakuten,,,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
 Stage: Git-Checkout - Status: SUCCESS
@@ -334,32 +334,4 @@ ERROR: script returned exit code 1
 Finished: FAILURE
 Stage: Deploy - Status: FAILURE
 Finished: FAILURE
-","The Jenkins CI/CD pipeline log shows that the pipeline failed during the ""Test"" stage. The error message indicates that there was a test failure in the `SIPControllerTest` class, specifically in the `testReturnResult` method. The test failure was due to an assertion error, where the expected value was `<82486>` but the actual value was `<824864>`. This failure caused the Maven build to fail, resulting in a pipeline failure.","The primary error is the test failure in the `SIPControllerTest` class, which led to a Maven build failure.","1. **Fix the Test Failure:** Identify and fix the issue in the `SIPControllerTest` class, specifically in the `testReturnResult` method. Ensure that the test is correctly written and the expected values are correct.
-2. **Verify Maven Configuration:** Check the Maven configuration and ensure that it is correct. Verify that the Maven version, plugins, and dependencies are correctly configured.
-3. **Re-run the Pipeline:** Re-run the pipeline with the `-e` switch to enable full debug logging, which can provide more detailed information about the error."
-11,Rakuten,,,"[Pipeline] { (Declarative: Tool Install)
-java.io.IOException: Unable to locate binary. A release might not exist for the selected combination. ID: jdk8u422-b05.1, Platform: LINUX, CPU: amd64
-	at PluginClassLoader for adoptopenjdk//io.jenkins.plugins.adoptopenjdk.AdoptOpenJDKInstaller.performInstallation(AdoptOpenJDKInstaller.java:117)
-	at hudson.tools.InstallerTranslator.getToolHome(InstallerTranslator.java:70)
-	at hudson.tools.ToolLocationNodeProperty.getToolHome(ToolLocationNodeProperty.java:109)
-	at hudson.tools.ToolInstallation.translateFor(ToolInstallation.java:221)
-	at hudson.model.JDK.forNode(JDK.java:150)
-	at hudson.model.JDK.forNode(JDK.java:60)
-	at PluginClassLoader for workflow-basic-steps//org.jenkinsci.plugins.workflow.steps.ToolStep$Execution.run(ToolStep.java:157)
-	at PluginClassLoader for workflow-basic-steps//org.jenkinsci.plugins.workflow.steps.ToolStep$Execution.run(ToolStep.java:138)
-	at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:47)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-Finished: FAILURE
-Stage: Declarative: Tool Install - Status: FAILURE
-Finished: FAILURE
-",,,,
-,Rakuten,,** AdoptOpenJDK Installer Error,** High,,"** The Jenkins CI/CD pipeline log provided shows that the pipeline failed during the ""Declarative: Tool Install"" stage. The error message indicates that the AdoptOpenJDK installer was unable to locate a binary for the selected combination of JDK version (jdk8u422-b05.1), platform (LINUX), and CPU architecture (amd64).","** The main error occurred during the ""Declarative: Tool Install"" stage when the AdoptOpenJDK installer tried to install the JDK, but it was unable to find a suitable binary.","**
-
-1. **Check JDK Version:** Ensure that the specified JDK version (jdk8u422-b05.1) is correct and available for the LINUX platform with amd64 architecture.
-2. **Verify Binary Availability:** Check if the binary for the specified JDK version is available in the AdoptOpenJDK repository.
-3. **Update AdoptOpenJDK Plugin:** Ensure that the AdoptOpenJDK plugin is up-to-date and supports the specified JDK version.
-4. **Fallback to Alternative JDK:** Consider using a different JDK version or a different JDK provider if the specified version is not available."
+",,,

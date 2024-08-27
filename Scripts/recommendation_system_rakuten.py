@@ -29,7 +29,7 @@ df = df.fillna('')
 # print(df.shape)
 # df.head()
 
-df = df[['Incident Number','Company Name','Problem Title','Incident Severity','Error Description','Solution']]
+df = df[['Incident Number','Company Name','Problem Title','Incident Severity','Error log','Solution']]
 # df['Title_Description'] = df['Title'] + df['Description']
 # df = df[['Name', 'City']]
 print(df.head())
@@ -37,7 +37,7 @@ print(df.head())
 # df.to_csv('data.csv', index=True)
 
 
-Description = df['Error Description']
+Description = df['Error log']
 # Description[0]
 
 embeddings = embed(Description)

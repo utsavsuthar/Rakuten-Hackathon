@@ -2,6 +2,8 @@
 import jenkins
 import os
 import subprocess
+import csv
+import pandas as pd
 from Scripts.script import parse_pipeline_log, generate_random_filename
 # Jenkins server configuration
 jenkins_url = 'http://localhost:8080'
@@ -13,7 +15,8 @@ job_name = 'calculator'
 server = jenkins.Jenkins(jenkins_url, username=username, password=password)
 
 # Get last build number and console output
-last_build_number = server.get_job_info(job_name)['lastCompletedBuild']['number']
+# last_build_number = server.get_job_info(job_name)['lastCompletedBuild']['number']
+last_build_number = 9
 output_info = server.get_build_console_output(job_name, last_build_number)
 
 dir2 = 'new_logs'
@@ -51,7 +54,6 @@ file_path_console = os.path.join(dir2, 'summ_log.txt')
 
 # # Write last build info to the first file
 
-
 with open(file_path_info, 'w') as output_file:
     for entry in log_details:
         output_file.write(entry)
@@ -59,6 +61,20 @@ with open(file_path_info, 'w') as output_file:
 with open(file_path_console, 'w') as output_file:
     for entry in log_details:
         output_file.write(entry)
+dataset_path = 'Incidents/Incidents.csv'
+data = pd.read_csv(dataset_path)
+incident_number = data.shape[0] + 1
 
-# command = ['streamlit','run','frontend.py']
+# Data to append (with some columns missing)
+result = ''.join(log_details)
+# Incident Number,Company Name,Problem Title,Incident Severity,Error log,Pipeline Stage Summary,Primary Error,Solution
+new_row = [incident_number, 'Rakuten','','',result,'','','']  # Missing the third column
+
+
+# Open the file in append mode
+with open(dataset_path, mode='a', newline='\n') as file:
+    writer = csv.writer(file)
+    writer.writerow(new_row)  # Write the new row
+
+
 subprocess.run(["streamlit", "run", "frontend.py"])

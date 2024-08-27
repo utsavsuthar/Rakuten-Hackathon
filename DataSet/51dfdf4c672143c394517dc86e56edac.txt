@@ -1,0 +1,42 @@
+[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[ERROR] COMPILATION ERROR : 
+[ERROR] /var/lib/jenkins/workspace/calculator/src/main/java/com/sipCalculator/controller/SIPController.java:[40,9] missing return statement
+[INFO] BUILD FAILURE
+Stage: Compile - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project SIPCalculator: Compilation failure
+[ERROR] /var/lib/jenkins/workspace/calculator/src/main/java/com/sipCalculator/controller/SIPController.java:[40,9] missing return statement
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Test)
+Skipped Stage: Test
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Build)
+Skipped Stage: Build
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILURE
+Stage: Deploy - Status: FAILURE
+Finished: FAILURE

@@ -1,6 +1,7 @@
 import streamlit as st
 from Scripts.recommendation_system_rakuten import recommend
 from llm.prompting import prompt
+from Scripts.update_dataset import extract_info
 # import getBuildLogs
 
 # Define the three functions to be called when each button is clicked
@@ -16,10 +17,12 @@ def function2():
     result = prompt(ex_2)
     # print(result)
     # print(dir(result))
+    extract_info(result.text)
     return result.text
 
 def function3():
-    
+    csv_file = 'Incidents/Incidents.csv'
+    df = pd.read_csv(csv_file_path)
     return "Function 3 executed: Welcome from Function 3!"
 
 # Create the Streamlit app layout
