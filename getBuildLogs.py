@@ -32,6 +32,14 @@ output_info = server.get_build_console_output(job_name, last_build_number)
 # Prepare output information
 # output_info = f'The last build ID for job \'{job_name}\' is {last_build_number}\n'
 # output_info = console_output
+import uuid
+
+def generate_random_filename(extension='txt'):
+    return f"{uuid.uuid4().hex}.{extension}"
+
+# Example usage
+filename = generate_random_filename('txt')
+# print(filename)  # e.g., 'e1d1eec5d3d74bba8e3e60b89470d26e.txt'
 
 # Define directories for output files
 dir1 = 'logs'
@@ -42,10 +50,10 @@ os.makedirs(dir1, exist_ok=True)
 os.makedirs(dir2, exist_ok=True)
 
 # Define file paths
-file_path_info = os.path.join(dir1, 'last_build_info.txt')
+file_path_info = os.path.join(dir1, filename)
 file_path_console = os.path.join(dir2, 'console_output.txt')
 
-# Write last build info to the first file
+# # Write last build info to the first file
 with open(file_path_info, 'w') as file_info:
     file_info.write(output_info)
 
