@@ -13,9 +13,13 @@ def function1():
 def function2():
     with open('ParsedLogs/summ_log.txt','r') as file:
         ex_2=file.read()
-    return prompt(ex_2)
+    result = prompt(ex_2)
+    # print(result)
+    # print(dir(result))
+    return result.text
 
 def function3():
+    
     return "Function 3 executed: Welcome from Function 3!"
 
 # Create the Streamlit app layout

@@ -1,7 +1,8 @@
 
 import jenkins
 import os
-from script import parse_pipeline_log, generate_random_filename
+import subprocess
+from Scripts.script import parse_pipeline_log, generate_random_filename
 # Jenkins server configuration
 jenkins_url = 'http://localhost:8080'
 username = 'sandhya'
@@ -58,3 +59,6 @@ with open(file_path_info, 'w') as output_file:
 with open(file_path_console, 'w') as output_file:
     for entry in log_details:
         output_file.write(entry)
+
+# command = ['streamlit','run','frontend.py']
+subprocess.run(["streamlit", "run", "frontend.py"])
