@@ -2,6 +2,7 @@ import streamlit as st
 from Scripts.recommendation_system_rakuten import recommend
 from llm.prompting import prompt
 from Scripts.update_dataset import extract_info
+import pandas as pd
 # import getBuildLogs
 
 # Define the three functions to be called when each button is clicked
@@ -22,8 +23,36 @@ def function2():
 
 def function3():
     csv_file = 'Incidents/Incidents.csv'
-    df = pd.read_csv(csv_file_path)
-    return "Function 3 executed: Welcome from Function 3!"
+    df = pd.read_csv(csv_file)
+
+    # Get the last row of the DataFrame
+    last_row = df.iloc[-1]
+
+    # Create a Streamlit form with editable text fields
+    st.title("Editable Text Fields with Last Row Data")
+
+    # Initialize a form in Streamlit
+    with st.form(key='my_form'):
+        # Create editable text fields for each column in the last row
+        form_data = {}
+        for column in df.columns:
+            # Display the text field prefilled with the last row's data
+            form_data[column] = st.text_input(column, value=str(last_row[column]))
+
+        # Add a submit button
+        submit_button = st.form_submit_button(label='Submit')
+
+    # Handle the form submission
+    if submit_button:
+        st.write("Form submitted with the following data:")
+        st.write(form_data)
+
+        # Optionally, update the last row in the DataFrame and save it back to the CSV file
+        for column, value in form_data.items():
+            df.at[df.index[-1], column] = value
+
+        df.to_csv(csv_file_path, index=False)
+        st.success("Data updated in the CSV file.")
 
 # Create the Streamlit app layout
 st.title("RCA CoPilot: Let's solve the CI/CD issues together :)")
