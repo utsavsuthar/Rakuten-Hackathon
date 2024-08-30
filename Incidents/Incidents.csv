@@ -1,340 +1,4 @@
 Incident Number,Company Name,Problem Title,Incident Severity,Error log,Pipeline Stage Summary,Primary Error,Solution
-1,Rakuten,Error: Unable to access jarfile SIPCalculator-0.0.1-SNAPSHOT.jar,,"[Pipeline] { (Declarative: Tool Install)
-Stage: Declarative: Tool Install - Status: SUCCESS
-[Pipeline] { (Git-Checkout)
-Stage: Git-Checkout - Status: SUCCESS
-[Pipeline] { (Compile)
-[INFO] BUILD SUCCESS
-Stage: Compile - Status: SUCCESS
-[Pipeline] { (Build)
-[INFO] BUILD SUCCESS
-Stage: Build - Status: SUCCESS
-[Pipeline] { (Test)
-[INFO] BUILD SUCCESS
-Stage: Test - Status: SUCCESS
-[Pipeline] { (Sonar-Analytics)
-Stage: Sonar-Analytics - Status: SUCCESS
-[Pipeline] { (Deploy)
-Error: Unable to access jarfile SIPCalculator-0.0.1-SNAPSHOT.jar
-ERROR: script returned exit code 1
-Finished: FAILURE
-Stage: Deploy - Status: FAILURE
-Finished: FAILURE",,,
-2,Rakuten,SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>,,"[Pipeline] { (Declarative: Tool Install)
-Stage: Declarative: Tool Install - Status: SUCCESS
-[Pipeline] { (Git-Checkout)
-Stage: Git-Checkout - Status: SUCCESS
-[Pipeline] { (Compile)
-[INFO] BUILD SUCCESS
-Stage: Compile - Status: SUCCESS
-[Pipeline] { (Build)
-[INFO] BUILD SUCCESS
-Stage: Build - Status: SUCCESS
-[Pipeline] { (Test)
-[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
-[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
-[ERROR] Failures: 
-[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
-[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
-[INFO] BUILD FAILURE
-Stage: Test - Status: FAILURE
-[INFO] BUILD FAILURE
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
-[ERROR] 
-[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
-[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-Stage: Test - Status: SUCCESS
-[Pipeline] { (Sonar-Analytics)
-Skipped Stage: Sonar-Analytics
-Stage: Sonar-Analytics - Status: SUCCESS
-[Pipeline] { (Docker Build & Tag)
-Skipped Stage: Docker Build & Tag
-Stage: Docker Build & Tag - Status: SUCCESS
-[Pipeline] { (Trivy Image Scan)
-Skipped Stage: Trivy Image Scan
-Stage: Trivy Image Scan - Status: SUCCESS
-[Pipeline] { (Docker Push Image)
-Skipped Stage: Docker Push Image
-Stage: Docker Push Image - Status: SUCCESS
-[Pipeline] { (Deploy)
-Skipped Stage: Deploy
-ERROR: script returned exit code 1
-Finished: FAILURE
-Stage: Deploy - Status: FAILURE
-Finished: FAILURE",,,
-3,Rakuten,ERROR: docker login failed,,"[Pipeline] { (Declarative: Tool Install)
-Stage: Declarative: Tool Install - Status: SUCCESS
-[Pipeline] { (Git-Checkout)
-Stage: Git-Checkout - Status: SUCCESS
-[Pipeline] { (Compile)
-[INFO] BUILD SUCCESS
-Stage: Compile - Status: SUCCESS
-[Pipeline] { (Build)
-[INFO] BUILD SUCCESS
-Stage: Build - Status: SUCCESS
-[Pipeline] { (Test)
-[INFO] BUILD SUCCESS
-Stage: Test - Status: SUCCESS
-[Pipeline] { (Sonar-Analytics)
-Stage: Sonar-Analytics - Status: SUCCESS
-[Pipeline] { (Docker Build & Tag)
-Stage: Docker Build & Tag - Status: SUCCESS
-[Pipeline] { (Trivy Image Scan)
-Skipped Stage: Trivy Image Scan
-Stage: Trivy Image Scan - Status: SUCCESS
-[Pipeline] { (Docker Push Image)
-Skipped Stage: Docker Push Image
-Stage: Docker Push Image - Status: SUCCESS
-[Pipeline] { (Deploy)
-Skipped Stage: Deploy
-ERROR: docker login failed
-Finished: FAILURE
-Stage: Deploy - Status: FAILURE
-Finished: FAILURE",,,
-4,Rakuten,"java.io.IOException: error=2, No such file or directory",,"[Pipeline] { (Declarative: Tool Install)
-Stage: Declarative: Tool Install - Status: SUCCESS
-[Pipeline] { (Git-Checkout)
-Stage: Git-Checkout - Status: SUCCESS
-[Pipeline] { (Compile)
-[INFO] BUILD SUCCESS
-Stage: Compile - Status: SUCCESS
-[Pipeline] { (Build)
-[INFO] BUILD SUCCESS
-Stage: Build - Status: SUCCESS
-[Pipeline] { (Test)
-[INFO] BUILD SUCCESS
-Stage: Test - Status: SUCCESS
-[Pipeline] { (Sonar-Analytics)
-Stage: Sonar-Analytics - Status: SUCCESS
-[Pipeline] { (Docker Build & Tag)
-Stage: Docker Build & Tag - Status: SUCCESS
-[Pipeline] { (Trivy Image Scan)
-Skipped Stage: Trivy Image Scan
-Stage: Trivy Image Scan - Status: SUCCESS
-[Pipeline] { (Docker Push Image)
-Skipped Stage: Docker Push Image
-Stage: Docker Push Image - Status: SUCCESS
-[Pipeline] { (Deploy)
-Skipped Stage: Deploy
-java.io.IOException: error=2, No such file or directory
-        at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
-        at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
-        at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
-        at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
-Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: e5b5e541-4bb4-4b23-adbe-a6b00650d70a
-Caused: java.io.IOException: Cannot run program ""docker"": error=2, No such file or directory
-        at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
-        at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
-        at hudson.Proc$LocalProc.<init>(Proc.java:252)
-        at hudson.Proc$LocalProc.<init>(Proc.java:221)
-        at hudson.Launcher$LocalLauncher.launch(Launcher.java:994)
-        at hudson.Launcher$ProcStarter.start(Launcher.java:506)
-        at hudson.Launcher$ProcStarter.join(Launcher.java:517)
-        at PluginClassLoader for docker-commons//org.jenkinsci.plugins.docker.commons.impl.RegistryKeyMaterialFactory.materialize(RegistryKeyMaterialFactory.java:102)
-        at PluginClassLoader for docker-workflow//org.jenkinsci.plugins.docker.workflow.AbstractEndpointStepExecution2.doStart(AbstractEndpointStepExecution2.java:53)
-        at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.GeneralNonBlockingStepExecution.lambda$run$0(GeneralNonBlockingStepExecution.java:77)
-        at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-        at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-        at java.base/java.lang.Thread.run(Thread.java:1583)
-Finished: FAILURE
-Stage: Deploy - Status: FAILURE
-Finished: FAILURE",,,
-5,Rakuten,Error: Unable to access jarfile your-jar-file-name.jar,,"[Pipeline] { (Declarative: Tool Install)
-Stage: Declarative: Tool Install - Status: SUCCESS
-[Pipeline] { (Git-Checkout)
-Stage: Git-Checkout - Status: SUCCESS
-[Pipeline] { (Compile)
-[INFO] BUILD SUCCESS
-Stage: Compile - Status: SUCCESS
-[Pipeline] { (Build)
-[INFO] BUILD SUCCESS
-Stage: Build - Status: SUCCESS
-[Pipeline] { (Test)
-[INFO] BUILD SUCCESS
-Stage: Test - Status: SUCCESS
-[Pipeline] { (Sonar-Analytics)
-Stage: Sonar-Analytics - Status: SUCCESS
-[Pipeline] { (Deploy)
-Error: Unable to access jarfile your-jar-file-name.jar
-ERROR: script returned exit code 1
-Finished: FAILURE
-Stage: Deploy - Status: FAILURE
-Finished: FAILURE",,,
-6,Rakuten,ERROR: docker login failed,,"[Pipeline] { (Declarative: Tool Install)
-Stage: Declarative: Tool Install - Status: SUCCESS
-[Pipeline] { (Git-Checkout)
-Stage: Git-Checkout - Status: SUCCESS
-[Pipeline] { (Compile)
-[INFO] BUILD SUCCESS
-Stage: Compile - Status: SUCCESS
-[Pipeline] { (Build)
-[INFO] BUILD SUCCESS
-Stage: Build - Status: SUCCESS
-[Pipeline] { (Test)
-[INFO] BUILD SUCCESS
-Stage: Test - Status: SUCCESS
-[Pipeline] { (Sonar-Analytics)
-Stage: Sonar-Analytics - Status: SUCCESS
-[Pipeline] { (Docker Build & Tag)
-Stage: Docker Build & Tag - Status: SUCCESS
-[Pipeline] { (Trivy Image Scan)
-Skipped Stage: Trivy Image Scan
-Stage: Trivy Image Scan - Status: SUCCESS
-[Pipeline] { (Docker Push Image)
-Skipped Stage: Docker Push Image
-Stage: Docker Push Image - Status: SUCCESS
-[Pipeline] { (Deploy)
-Skipped Stage: Deploy
-ERROR: docker login failed
-Finished: FAILURE
-Stage: Deploy - Status: FAILURE
-Finished: FAILURE",,,
-7,Rakuten,ERROR Error during SonarScanner CLI execution,,"[Pipeline] { (Declarative: Tool Install)
-Stage: Declarative: Tool Install - Status: SUCCESS
-[Pipeline] { (Git-Checkout)
-Stage: Git-Checkout - Status: SUCCESS
-[Pipeline] { (Compile)
-[INFO] BUILD SUCCESS
-Stage: Compile - Status: SUCCESS
-[Pipeline] { (Build)
-[INFO] BUILD SUCCESS
-Stage: Build - Status: SUCCESS
-[Pipeline] { (Test)
-[INFO] BUILD SUCCESS
-Stage: Test - Status: SUCCESS
-[Pipeline] { (Sonar-Analytics)
-21:42:28.195 ERROR Error during SonarScanner CLI execution
-java.lang.IllegalStateException: Failed to upload report: Error 500 on http://localhost:9000/api/ce/submit?projectKey=SIPCalculator&projectName=Blogging-app : {""errors"":[{""msg"":""An error has occurred. Please contact your administrator""}]}
-        at org.sonar.scanner.report.ReportPublisher.upload(ReportPublisher.java:226)
-        at org.sonar.scanner.report.ReportPublisher.execute(ReportPublisher.java:154)
-        at org.sonar.scanner.scan.SpringProjectScanContainer.doAfterStart(SpringProjectScanContainer.java:376)
-        at org.sonar.core.platform.SpringComponentContainer.startComponents(SpringComponentContainer.java:188)
-        at org.sonar.core.platform.SpringComponentContainer.execute(SpringComponentContainer.java:167)
-        at org.sonar.scanner.bootstrap.SpringGlobalContainer.doAfterStart(SpringGlobalContainer.java:137)
-        at org.sonar.core.platform.SpringComponentContainer.startComponents(SpringComponentContainer.java:188)
-        at org.sonar.core.platform.SpringComponentContainer.execute(SpringComponentContainer.java:167)
-        at org.sonar.batch.bootstrapper.Batch.doExecute(Batch.java:72)
-        at org.sonar.batch.bootstrapper.Batch.execute(Batch.java:66)
-        at org.sonarsource.scanner.lib.internal.batch.BatchIsolatedLauncher.execute(BatchIsolatedLauncher.java:41)
-        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-        at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-        at org.sonarsource.scanner.lib.internal.IsolatedLauncherProxy.invoke(IsolatedLauncherProxy.java:62)
-        at jdk.proxy3/jdk.proxy3.$Proxy2.execute(Unknown Source)
-        at org.sonarsource.scanner.lib.InProcessScannerEngineFacade.doAnalyze(InProcessScannerEngineFacade.java:39)
-        at org.sonarsource.scanner.lib.Scann erEngineFacade.analyze(ScannerEngineFacade.java:61)
-        at org.sonarsource.scanner.cli.Main.analyze(Main.java:77)
-        at org.sonarsource.scanner.cli.Main.main(Main.java:63)
-Caused by: org.sonarqube.ws.client.HttpException: Error 500 on http://localhost:9000/api/ce/submit?projectKey=SIPCalculator&projectName=Blogging-app : {""errors"":[{""msg"":""An error has occurred. Please contact your administrator""}]}
-        at org.sonarqube.ws.client.BaseResponse.failIfNotSuccessful(BaseResponse.java:36)
-        at org.sonar.scanner.bootstrap.DefaultScannerWsClient.failIfUnauthorized(DefaultScannerWsClient.java:126)
-        at org.sonar.scanner.bootstrap.DefaultScannerWsClient.call(DefaultScannerWsClient.java:89)
-        at org.sonar.scanner.report.ReportPublisher.upload(ReportPublisher.java:224)
-21:42:28.197 ERROR 
-21:42:28.197 ERROR Re-run SonarScanner CLI using the -X switch to enable full debug logging.
-Stage: Sonar-Analytics - Status: SUCCESS
-[Pipeline] { (Deploy)
-Skipped Stage: Deploy
-ERROR: script returned exit code 1
-Finished: FAILURE
-Stage: Deploy - Status: FAILURE
-Finished: FAILURE",,,
-8,Rakuten,ava.io.IOException: Unable to locate binary. A release might not exist for the selected combination. ,,"[Pipeline] { (Declarative: Tool Install)
-java.io.IOException: Unable to locate binary. A release might not exist for the selected combination. ID: jdk8u422-b05.1, Platform: MACOS, CPU: arm
-        at PluginClassLoader for adoptopenjdk//io.jenkins.plugins.adoptopenjdk.AdoptOpenJDKInstaller.performInstallation(AdoptOpenJDKInstaller.java:117)
-        at hudson.tools.InstallerTranslator.getToolHome(InstallerTranslator.java:70)
-        at hudson.tools.ToolLocationNodeProperty.getToolHome(ToolLocationNodeProperty.java:109)
-        at hudson.tools.ToolInstallation.translateFor(ToolInstallation.java:221)
-        at hudson.model.JDK.forNode(JDK.java:150)
-        at hudson.model.JDK.forNode(JDK.java:60)
-        at PluginClassLoader for workflow-basic-steps//org.jenkinsci.plugins.workflow.steps.ToolStep$Execution.run(ToolStep.java:157)
-        at PluginClassLoader for workflow-basic-steps//org.jenkinsci.plugins.workflow.steps.ToolStep$Execution.run(ToolStep.java:138)
-        at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:47)
-        at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-        at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-        at java.base/java.lang.Thread.run(Thread.java:1583)
-Finished: FAILURE
-Stage: Declarative: Tool Install - Status: FAILURE
-Finished: FAILURE",,,
-9,Rakuten,,,"[Pipeline] { (Declarative: Tool Install)
-Stage: Declarative: Tool Install - Status: SUCCESS
-[Pipeline] { (Git-Checkout)
-Stage: Git-Checkout - Status: SUCCESS
-[Pipeline] { (Compile)
-[INFO] BUILD SUCCESS
-Stage: Compile - Status: SUCCESS
-[Pipeline] { (Test)
-[INFO] BUILD SUCCESS
-Stage: Test - Status: SUCCESS
-[Pipeline] { (Sonar-Analytics)
-Stage: Sonar-Analytics - Status: SUCCESS
-[Pipeline] { (Build)
-[INFO] BUILD SUCCESS
-Stage: Build - Status: SUCCESS
-[Pipeline] { (Docker Build & Tag)
-Stage: Docker Build & Tag - Status: SUCCESS
-[Pipeline] { (Docker Push Image)
-Stage: Docker Push Image - Status: SUCCESS
-[Pipeline] { (Deploy)
-Finished: SUCCESS
-Stage: Deploy - Status: SUCCESS
-",,,
-10,Rakuten,,,"[Pipeline] { (Declarative: Tool Install)
-Stage: Declarative: Tool Install - Status: SUCCESS
-[Pipeline] { (Git-Checkout)
-Stage: Git-Checkout - Status: SUCCESS
-[Pipeline] { (Compile)
-[ERROR] COMPILATION ERROR : 
-[ERROR] /var/lib/jenkins/workspace/calculator/src/main/java/com/sipCalculator/controller/SIPController.java:[40,9] missing return statement
-[INFO] BUILD FAILURE
-Stage: Compile - Status: FAILURE
-[INFO] BUILD FAILURE
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project SIPCalculator: Compilation failure
-[ERROR] /var/lib/jenkins/workspace/calculator/src/main/java/com/sipCalculator/controller/SIPController.java:[40,9] missing return statement
-[ERROR] 
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-Stage: Compile - Status: SUCCESS
-[Pipeline] { (Test)
-Skipped Stage: Test
-Stage: Test - Status: SUCCESS
-[Pipeline] { (Sonar-Analytics)
-Skipped Stage: Sonar-Analytics
-Stage: Sonar-Analytics - Status: SUCCESS
-[Pipeline] { (Build)
-Skipped Stage: Build
-Stage: Build - Status: SUCCESS
-[Pipeline] { (Docker Build & Tag)
-Skipped Stage: Docker Build & Tag
-Stage: Docker Build & Tag - Status: SUCCESS
-[Pipeline] { (Docker Push Image)
-Skipped Stage: Docker Push Image
-Stage: Docker Push Image - Status: SUCCESS
-[Pipeline] { (Deploy)
-Skipped Stage: Deploy
-ERROR: script returned exit code 1
-Finished: FAILURE
-Stage: Deploy - Status: FAILURE
-Finished: FAILURE
-",,,
 11,Rakuten,** Test Failure and Maven Build Failure,** Medium,"[Pipeline] { (Declarative: Tool Install)
 Stage: Declarative: Tool Install - Status: SUCCESS
 [Pipeline] { (Git-Checkout)
@@ -556,3 +220,584 @@ Finished: FAILURE"," The provided Jenkins CI/CD pipeline logs indicate that the 
 3. Update the Test Data: If the test data is outdated, update it to reflect the correct expected value.
 
 Note: The skipped stages and successful stages are not relevant to the error analysis."
+15,Rakuten, Test Failure and Maven Build Failure, Medium,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE"," The pipeline log shows that the pipeline failed during the ""Test"" stage. The error message indicates that there was a test failure in the `SIPControllerTest` class, specifically in the `testReturnResult` method. The test expected a value of `<82486>` but received `<824864>`. This failure caused the Maven build to fail, resulting in a pipeline failure."," The primary error is the test failure in the `SIPControllerTest` class, which led to a Maven build failure.","
+
+1. Fix the Test: Review the `SIPControllerTest` class and fix the `testReturnResult` method to ensure it returns the correct value.
+2. Review Maven Configuration: Verify that the Maven configuration is correct, and the test dependencies are properly set up.
+3. Check Code Changes: Review recent code changes to ensure that they did not introduce any issues that could be causing the test failure.
+
+Let me know if you need help with the next input!"
+16,Rakuten, Test Failure, Medium,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE"," The Jenkins CI/CD pipeline logs show that the pipeline executed successfully up until the ""Test"" stage, where it encountered a failure. The error message indicates that one of the tests failed, specifically the `testReturnResult` test in the `SIPControllerTest` class."," The main error is the test failure, which is caused by an assertion error. The expected value was `<82486>` but the actual value was `<824864>`.","
+
+1. Fix the Test: Review the test code and ensure that the expected value is correct. Update the test to reflect the correct expected value.
+2. Review the Code: Investigate the code changes that may have caused the test to fail. Ensure that the code is correct and the test is valid.
+3. Re-run the Test: Re-run the test to ensure that it is not a intermittent issue.
+
+Please let me know if you need further assistance!"
+17,Rakuten, Test Failure, Medium,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE"," The Jenkins CI/CD pipeline logs show that the pipeline executed successfully up until the ""Test"" stage, where it encountered a failure. The error message indicates that one of the tests failed, specifically the `testReturnResult` test in the `SIPControllerTest` class."," The primary error is a test failure, which caused the pipeline to fail. The error message indicates that the expected result was `<82486>` but the actual result was `<824864>`.","
+
+1. Fix the Test: Review the `testReturnResult` test and ensure that it is correctly implemented. Verify that the expected result is correct and that the test is not flaky.
+2. Debug the Test: Run the test in debug mode to understand why it is failing. This can help identify the root cause of the issue.
+3. Review the Code: Review the code changes made to the `SIPController` class and ensure that they are correct. Verify that the changes did not introduce any bugs.
+
+Let me know if you need help with the next input!"
+18,Rakuten,,,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE",,,
+19,Rakuten, Test Failure, Medium,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE"," The provided Jenkins CI/CD pipeline logs indicate that the pipeline failed during the ""Test"" stage. The error message shows that one of the tests, specifically `testReturnResult` in `SIPControllerTest`, failed due to an assertion error. The expected value was `<82486>` but the actual value was `<824864>`."," The primary error is the test failure, which caused the pipeline to fail.","
+
+1. Fix the Test: Review the test code and fix the assertion error. Ensure that the expected value matches the actual value.
+2. Debug the Test: Run the test with the `-e` switch to enable full debug logging and identify the root cause of the failure.
+3. Review the Code: Review the code changes made to the `SIPController` class and ensure that they are correct and do not introduce any bugs.
+
+Let me know if you need help with the next input!"
+10,Rakuten,,,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE",,,
+12,Rakuten, Test Failure, Medium,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE"," The provided Jenkins CI/CD pipeline logs indicate that the pipeline failed during the ""Test"" stage. The error message shows that one of the tests, specifically `testReturnResult` in `SIPControllerTest`, failed with an assertion error. The expected value was `<82486>` but the actual value was `<824864>`."," The primary error is the test failure, which caused the pipeline to fail.","
+
+1. Fix the Test: Review the test code and ensure that the expected value is correct. Update the test to reflect the correct expected value.
+2. Debug the Code: Debug the code to identify why the actual value is different from the expected value. Fix the code to ensure that it produces the correct result.
+3. Update the Test Data: If the test data is outdated, update it to reflect the correct values.
+
+Note: The skipped stages and successful stages are not relevant to the error analysis."
+13,Rakuten, Test Failure, Medium,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE"," The provided Jenkins CI/CD pipeline logs show that the pipeline encountered a failure during the ""Test"" stage. The error message indicates that there was a test failure in the `SIPControllerTest` class, specifically in the `testReturnResult` method. The error message suggests that the expected result was `<82486>` but the actual result was `<824864>`.", The primary error is the test failure in the `SIPControllerTest` class.,"
+
+1. Fix the Test: Review the `SIPControllerTest` class and fix the `testReturnResult` method to ensure that it returns the correct result.
+2. Update the Expected Result: Update the expected result in the `testReturnResult` method to match the actual result.
+3. Debug the Test: Debug the `testReturnResult` method to identify the root cause of the issue.
+
+Note: The pipeline also skipped several stages, including ""Sonar-Analytics"", ""Docker Build & Tag"", ""Trivy Image Scan"", and ""Docker Push Image"", but the primary error is the test failure in the ""Test"" stage."
+13,Rakuten,,,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE",,,
+14,Rakuten,,,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE",,,
+15,Rakuten, Test Failure and Maven Build Failure, Medium,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE"," The pipeline log shows that the ""Test"" stage failed due to a test failure in the `SIPControllerTest` class. The error message indicates that there was an assertion failure in the `testReturnResult` method, where the expected value was `<82486>` but the actual value was `<824864>`. This failure caused the Maven build to fail, resulting in a pipeline failure."," The primary error is the test failure in the `SIPControllerTest` class, which led to a Maven build failure.","
+
+1. Fix the Test Failure: Identify and fix the issue in the `SIPControllerTest` class, specifically in the `testReturnResult` method.
+2. Review Maven Configuration: Verify that the Maven configuration is correct, and the test dependencies are properly set up.
+3. Check Code Changes: Review recent code changes to ensure that they did not introduce any issues that could be causing the test failure.
+
+Please let me know if you need further assistance!"

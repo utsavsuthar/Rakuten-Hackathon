@@ -139,7 +139,7 @@ def train_and_save_knn_model():
 	plt.figure(figsize=(10, 8))
 	plt.scatter(pca_result[:, 0], pca_result[:, 1])
 	# plt.show()
-	nn = NearestNeighbors(n_neighbors=5)
+	nn = NearestNeighbors(n_neighbors=3)
 	nn.fit(embeddings)
 	joblib.dump(nn, model_path)
 	print(f"KNN model saved successfully at {model_path}")
@@ -152,13 +152,21 @@ def recommend(text):
 	neighbours = nn.kneighbors(emd, return_distance=False)[0]
 	df = pd.read_csv("Incidents/Incidents.csv")
 	df = df.fillna('')
-	df = df[['Incident Number','Company Name','Problem Title','Incident Severity','Error log','Solution']]
-	results = df['Problem Title'].iloc[neighbours].tolist()
+	df = df[['Incident Number', 'Problem Title', 'Solution']]
+    
+	# Extract the results based on neighbors' indices
+	results = df.iloc[neighbours].reset_index(drop=True)
+	# print(type(df))
+	# Convert the results to a list of dictionaries (or tuples)
+	# results_list = results.to_dict(orient='records')  # Each record is a dictionary
+
+	# data_df = pd.DataFrame.from_dict(df, orient='index', columns=['Values'])
+
 	return results
 
 # Train and save the model
 # train_and_save_knn_model()
 
-# Example prediction
+# # # # Example prediction
 # recommendations = recommend("Sample error log text")
 # print("Recommended Titles:", recommendations)

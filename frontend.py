@@ -9,8 +9,23 @@ import pandas as pd
 def function1():
     with open('ParsedLogs/summ_log.txt', 'r') as file:
         contents = file.read()
-    recommendations = recommend(contents)
-    return recommendations
+    data_df = recommend(contents)
+
+    st.title("Top 3 Similar Incidents & Solutions!")
+    formatted_data_df = data_df.applymap(
+        lambda x: x.replace("**", "").replace("**", "") if isinstance(x, str) else x
+    )
+    formatted_data_df = formatted_data_df.applymap(
+        lambda x: x.replace("\n", "<br>") if isinstance(x, str) else x
+    )
+
+    # Convert the formatted DataFrame to HTML
+    html = formatted_data_df.to_html(index=False, escape=False, border=1)
+
+    # Display the HTML in Streamlit
+    st.markdown(html, unsafe_allow_html=True)
+
+    return ''
 
 def function2():
     with open('ParsedLogs/summ_log.txt','r') as file:
@@ -27,59 +42,43 @@ def function3():
     df = pd.read_csv(csv_file)
 
     # Get the last row of the DataFrame
-    last_row = df.iloc[-1]
+    # new_df = df.tail(1).reset_index(drop=True)
+    new_df = df.tail(1).reset_index(drop=True)
+    row = new_df.iloc[0]
+    for column in new_df.columns:
+        # Display the column name as the heading
+        st.header(column)
+        
+        # Display the value as a sentence
+        st.markdown(row[column])
 
-    # Create a Streamlit form with editable text fields
-    st.title("Editable Text Fields with Last Row Data")
+# Display the new DataFrame without showing the index (row number)
+# print("\nNew DataFrame with only the last row (index not displayed):")
+    # new_df.to_string(index=False)
+    # st.table(new_df)
+    return ""
+            
 
-    # Initialize a form in Streamlit
-    with st.form(key='my_form'):
-        # Create editable text fields for each column in the last row
-        form_data = {}
-        for column in df.columns:
-            # Display the text field prefilled with the last row's data
-            form_data[column] = st.text_input(column, value=str(last_row[column]))
 
-        # Add a submit button
-        submit_button = st.form_submit_button(label='Submit')
-
-    # Handle the form submission
-    if submit_button:
-        st.write("Form submitted with the following data:")
-        st.write(form_data)
-
-        # Optionally, update the last row in the DataFrame and save it back to the CSV file
-        for column, value in form_data.items():
-            df.at[df.index[-1], column] = value
-
-        df.to_csv(csv_file, index=False)
-        st.success("Data updated in the CSV file.")
-
-# Create the Streamlit app layout
 st.title("RCA CoPilot: Let's solve the CI/CD issues together :)")
 
-#call the function to get the log files fron jenkins
-# getBuildLogs.printfn()
-# print("call completed")
-
-# Create a horizontal layout for the buttons
-col1, col2, col3 = st.columns(3)
+# Create a vertical layout for the buttons
+st.header("Choose an option:")
+button1 = st.button("Recommendation System for CI/CD Pipeline Failures")
+button2 = st.button("Automated Error Log Analysis & Resolution")
+button3 = st.button("Automated Root Cause Analysis Reports")
 
 # Initialize a variable to hold the output
 output = ""
 
-# Add buttons to the layout
-with col1:
-    if st.button("Button 1"):
-        output = function1()
+# Check which button is clicked and call the corresponding function
+if button1:
+    output = function1()
+elif button2:
+    output = function2()
+elif button3:
+    output = function3()
 
-with col2:
-    if st.button("Button 2"):
-        output = function2()
-
-with col3:
-    if st.button("Button 3"):
-        output = function3()
 
 # Display the output below the buttons
 st.write(output)
