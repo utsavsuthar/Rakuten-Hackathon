@@ -139,7 +139,7 @@ with col1:
     st.write(' ')
 
 with col2:
-    st.image("logo.jpeg", width=250)
+    st.image("logo_new.png", width=250)
 
 with col3:
     st.write(' ')
