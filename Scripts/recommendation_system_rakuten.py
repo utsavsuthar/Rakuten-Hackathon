@@ -160,5 +160,5 @@ def recommend(text):
 # train_and_save_knn_model()
 
 # Example prediction
-recommendations = recommend("Sample error log text")
-print("Recommended Titles:", recommendations)
+# recommendations = recommend("Sample error log text")
+# print("Recommended Titles:", recommendations)

@@ -35,11 +35,11 @@ def extract_info(text):
         "Incident Number": last_row['Incident Number'],
         "Company Name": last_row['Company Name'],
         "Error log": last_row['Error log'],
-        "Problem Title": info.get("Problem Title", ""),
-        "Incident Severity": info.get("Incident Severity", ""),
-        "Pipeline Stage Summary": info.get("Pipeline Stage Summary", ""),
-        "Primary Error": info.get("Primary Error", ""),
-        "Solution": info.get("Solution", "")
+        "Problem Title": info.get("Problem Title", "").replace("**", ""),
+        "Incident Severity": info.get("Incident Severity", "").replace("**", ""),
+        "Pipeline Stage Summary": info.get("Pipeline Stage Summary", "").replace("**", ""),
+        "Primary Error": info.get("Primary Error", "").replace("**", ""),
+        "Solution": info.get("Solution", "").replace("**", "")
     }
     # print(new_data)
     df = df.astype('object')
@@ -87,4 +87,4 @@ Let me know if you need help with the next input!
 Updated the last row with new information.
 '''
 
-extract_info(input_data)
+# extract_info(input_data)

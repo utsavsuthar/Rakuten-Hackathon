@@ -445,3 +445,114 @@ Finished: FAILURE","** The Jenkins CI/CD pipeline logs show that the pipeline ex
 3. **Update the Test Data:** If the test data is outdated, update it to reflect the correct expected values.
 
 Let me know if you need help with the next input!"
+13,Rakuten,** AdoptOpenJDK Installer Error,** High,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE","** The Jenkins CI/CD pipeline log provided shows that the pipeline failed during the ""Declarative: Tool Install"" stage. The error message indicates that the AdoptOpenJDK installer was unable to locate a binary for the selected combination of JDK version (jdk8u422-b05.1), platform (LINUX), and CPU architecture (amd64).","** The main error occurred during the ""Declarative: Tool Install"" stage when the AdoptOpenJDK installer tried to perform the installation.","**
+
+1. **Check JDK Version:** Ensure that the specified JDK version (jdk8u422-b05.1) is available and compatible with the platform (LINUX) and CPU architecture (amd64).
+2. **Verify Installer Configuration:** Review the AdoptOpenJDK installer configuration to ensure that it is correctly set up to download and install the required JDK version.
+3. **Check Network Connectivity:** Verify that the Jenkins agent has a stable network connection to download the required JDK version.
+
+Let me know if you need help with the next input!
+Updated the last row with new information."
+14,Rakuten, Test Failure, Medium,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE"," The provided Jenkins CI/CD pipeline logs indicate that the pipeline failed during the ""Test"" stage. The error message shows that one of the tests, specifically `testReturnResult` in `SIPControllerTest`, failed with an assertion error. The expected value was `<82486>` but the actual value was `<824864>`."," The primary error is the test failure, which caused the pipeline to fail.","
+
+1. Fix the Test: Review the test code and ensure that the expected value is correct. Update the test to reflect the correct expected value.
+2. Debug the Code: Debug the code to identify why the actual value is different from the expected value. Fix the code to ensure that it produces the correct result.
+3. Update the Test Data: If the test data is outdated, update it to reflect the correct expected value.
+
+Note: The skipped stages and successful stages are not relevant to the error analysis."

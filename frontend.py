@@ -16,7 +16,8 @@ def function2():
     with open('ParsedLogs/summ_log.txt','r') as file:
         ex_2=file.read()
     result = prompt(ex_2)
-    # print(result)
+    
+    # print(result_filterd)
     # print(dir(result))
     extract_info(result.text)
     return result.text

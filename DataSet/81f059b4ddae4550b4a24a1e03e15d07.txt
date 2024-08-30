@@ -1,0 +1,49 @@
+[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
+[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
+[ERROR] Failures: 
+[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
+[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
+Stage: Test - Status: FAILURE
+[INFO] BUILD FAILURE
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Skipped Stage: Sonar-Analytics
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Skipped Stage: Docker Build & Tag
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: script returned exit code 1
+Finished: FAILUREStage: Deploy - Status: FAILURE
+Finished: FAILURE
