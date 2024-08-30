@@ -32,6 +32,9 @@ from io import BytesIO
 #     html_content += "</body></html>"
     
 #     return html_content
+wkhtmltopdf_path = '/usr/local/bin/wkhtmltopdf'
+config = pdfkit.configuration(wkhtmltopdf=wkhtmltopdf_path)
+
 def generate_html(df):
     # Get the last row of the DataFrame
     last_row = df.iloc[-1]
@@ -49,7 +52,7 @@ def generate_html(df):
     return html_content
 # Function to convert HTML to PDF
 def convert_html_to_pdf(html_content):
-    pdf_file = pdfkit.from_string(html_content, False)
+    pdf_file = pdfkit.from_string(html_content, False, configuration=config)
     return pdf_file
 
 def display_dataframe(df):
