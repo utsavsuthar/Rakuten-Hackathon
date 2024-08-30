@@ -36,13 +36,13 @@ Fetching upstream changes from https://github.com/sandhyasankar29/SIPCalculator.
 using GIT_ASKPASS to set credentials git-credential
  > git fetch --tags --force --progress -- https://github.com/sandhyasankar29/SIPCalculator.git +refs/heads/*:refs/remotes/origin/* # timeout=10
  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
-Checking out Revision 6ef71c425722919c0e5db3f9708d073fb5217b0e (refs/remotes/origin/main)
+Checking out Revision 4cd25bb2314e814597f280eea912f0d7b2ec4b93 (refs/remotes/origin/main)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 6ef71c425722919c0e5db3f9708d073fb5217b0e # timeout=10
+ > git checkout -f 4cd25bb2314e814597f280eea912f0d7b2ec4b93 # timeout=10
  > git branch -a -v --no-abbrev # timeout=10
  > git branch -D main # timeout=10
- > git checkout -b main 6ef71c425722919c0e5db3f9708d073fb5217b0e # timeout=10
-Commit message: "Fail Test"
+ > git checkout -b main 4cd25bb2314e814597f280eea912f0d7b2ec4b93 # timeout=10
+Commit message: "Junit Test"
  > git rev-list --no-walk 4cd25bb2314e814597f280eea912f0d7b2ec4b93 # timeout=10
 [Pipeline] }
 [Pipeline] // withEnv
@@ -90,8 +90,8 @@ Commit message: "Fail Test"
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  0.971 s
-[INFO] Finished at: 2024-08-25T23:08:19+05:30
+[INFO] Total time:  0.977 s
+[INFO] Finished at: 2024-08-25T22:48:57+05:30
 [INFO] ------------------------------------------------------------------------
 [Pipeline] }
 [Pipeline] // withEnv
@@ -157,8 +157,8 @@ Commit message: "Fail Test"
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.444 s
-[INFO] Finished at: 2024-08-25T23:08:22+05:30
+[INFO] Total time:  1.407 s
+[INFO] Finished at: 2024-08-25T22:49:00+05:30
 [INFO] ------------------------------------------------------------------------
 [Pipeline] }
 [Pipeline] // withEnv
@@ -219,23 +219,23 @@ Commit message: "Fail Test"
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.sipCalculator.SipCalculatorApplicationTests
-23:08:25.370 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-23:08:25.373 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-23:08:25.388 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.sipCalculator.SipCalculatorApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-23:08:25.392 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.sipCalculator.SipCalculatorApplicationTests], using SpringBootContextLoader
-23:08:25.393 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.sipCalculator.SipCalculatorApplicationTests]: class path resource [com/sipCalculator/SipCalculatorApplicationTests-context.xml] does not exist
-23:08:25.393 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.sipCalculator.SipCalculatorApplicationTests]: class path resource [com/sipCalculator/SipCalculatorApplicationTestsContext.groovy] does not exist
-23:08:25.393 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.sipCalculator.SipCalculatorApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-23:08:25.394 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.sipCalculator.SipCalculatorApplicationTests]: SipCalculatorApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-23:08:25.427 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.sipCalculator.SipCalculatorApplicationTests]
-23:08:25.448 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/sandhyas/.jenkins/workspace/Calculator/target/classes/com/sipCalculator/SipCalculatorApplication.class]
-23:08:25.448 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.sipCalculator.SipCalculatorApplication for test class com.sipCalculator.SipCalculatorApplicationTests
-23:08:25.478 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.sipCalculator.SipCalculatorApplicationTests]: using defaults.
-23:08:25.478 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-23:08:25.483 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
-23:08:25.483 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
-23:08:25.483 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7216fb24, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2072acb2, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@50ecde95, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@35a9782c, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@70a36a66, org.springframework.test.context.support.DirtiesContextTestExecutionListener@45815ffc, org.springframework.test.context.event.EventPublishingTestExecutionListener@732f29af, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@d3957fe, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6622fc65, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@299321e2, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@23fb172e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@64ba3208, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@158a3b2e]
-23:08:25.486 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@56303b57 testClass = SipCalculatorApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4b2a01d4 testClass = SipCalculatorApplicationTests, locations = '{}', classes = '{class com.sipCalculator.SipCalculatorApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@730d2164, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4ee203eb, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3214ee6, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@a8ef162, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1cf56a1c, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@11a9e7c8], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+22:49:03.379 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+22:49:03.382 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+22:49:03.401 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.sipCalculator.SipCalculatorApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+22:49:03.405 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.sipCalculator.SipCalculatorApplicationTests], using SpringBootContextLoader
+22:49:03.406 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.sipCalculator.SipCalculatorApplicationTests]: class path resource [com/sipCalculator/SipCalculatorApplicationTests-context.xml] does not exist
+22:49:03.407 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.sipCalculator.SipCalculatorApplicationTests]: class path resource [com/sipCalculator/SipCalculatorApplicationTestsContext.groovy] does not exist
+22:49:03.407 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.sipCalculator.SipCalculatorApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+22:49:03.407 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.sipCalculator.SipCalculatorApplicationTests]: SipCalculatorApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:49:03.424 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.sipCalculator.SipCalculatorApplicationTests]
+22:49:03.445 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/sandhyas/.jenkins/workspace/Calculator/target/classes/com/sipCalculator/SipCalculatorApplication.class]
+22:49:03.445 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.sipCalculator.SipCalculatorApplication for test class com.sipCalculator.SipCalculatorApplicationTests
+22:49:03.479 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.sipCalculator.SipCalculatorApplicationTests]: using defaults.
+22:49:03.479 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+22:49:03.483 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+22:49:03.483 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+22:49:03.484 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b0f373b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2ceb80a1, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4b45dcb8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7216fb24, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2072acb2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@50ecde95, org.springframework.test.context.event.EventPublishingTestExecutionListener@35a9782c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@70a36a66, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@45815ffc, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@732f29af, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@d3957fe, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6622fc65, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@299321e2]
+22:49:03.485 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@7cbc3762 testClass = SipCalculatorApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3a6f2de3 testClass = SipCalculatorApplicationTests, locations = '{}', classes = '{class com.sipCalculator.SipCalculatorApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3b6d844d, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@10289886, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@45efd90f, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@2f01783a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1f760b47, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@16e7dcfd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -245,55 +245,184 @@ Commit message: "Fail Test"
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.7.3)
 
-2024-08-25 23:08:25.630  INFO 18136 --- [           main] c.s.SipCalculatorApplicationTests        : Starting SipCalculatorApplicationTests using Java 17.0.10 on Sandhyas-MacBook-Air.local with PID 18136 (started by sandhyas in /Users/sandhyas/.jenkins/workspace/Calculator)
-2024-08-25 23:08:25.631  INFO 18136 --- [           main] c.s.SipCalculatorApplicationTests        : No active profile set, falling back to 1 default profile: "default"
-2024-08-25 23:08:26.269  INFO 18136 --- [           main] c.s.SipCalculatorApplicationTests        : Started SipCalculatorApplicationTests in 0.756 seconds (JVM running for 1.201)
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.073 s - in com.sipCalculator.SipCalculatorApplicationTests
+2024-08-25 22:49:03.620  INFO 17462 --- [           main] c.s.SipCalculatorApplicationTests        : Starting SipCalculatorApplicationTests using Java 17.0.10 on Sandhyas-MacBook-Air.local with PID 17462 (started by sandhyas in /Users/sandhyas/.jenkins/workspace/Calculator)
+2024-08-25 22:49:03.621  INFO 17462 --- [           main] c.s.SipCalculatorApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2024-08-25 22:49:04.218  INFO 17462 --- [           main] c.s.SipCalculatorApplicationTests        : Started SipCalculatorApplicationTests in 0.706 seconds (JVM running for 1.163)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.057 s - in com.sipCalculator.SipCalculatorApplicationTests
 [INFO] Running com.sipCalculator.controller.SIPControllerTest
-[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.sipCalculator.controller.SIPControllerTest
-[ERROR] testReturnResult  Time elapsed: 0 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <82486> but was: <824864>
-	at com.sipCalculator.controller.SIPControllerTest.testReturnResult(SIPControllerTest.java:39)
-
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.sipCalculator.controller.SIPControllerTest
 [INFO] 
 [INFO] Results:
 [INFO] 
-[ERROR] Failures: 
-[ERROR]   SIPControllerTest.testReturnResult:39 expected: <82486> but was: <824864>
-[INFO] 
-[ERROR] Tests run: 3, Failures: 1, Errors: 0, Skipped: 0
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
 [INFO] 
 [INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
+[INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.684 s
-[INFO] Finished at: 2024-08-25T23:08:27+05:30
+[INFO] Total time:  3.632 s
+[INFO] Finished at: 2024-08-25T22:49:05+05:30
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.2:test (default-test) on project SIPCalculator: There are test failures.
-[ERROR] 
-[ERROR] Please refer to /Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports for the individual test results.
-[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
 [Pipeline] }
 [Pipeline] // withEnv
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
 [Pipeline] { (Sonar-Analytics)
-Stage "Sonar-Analytics" skipped due to earlier failure(s)
-[Pipeline] getContext
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withSonarQubeEnv
+Injecting SonarQube environment variables using the configuration: sonar-server
+[Pipeline] {
+[Pipeline] sh
++ /Users/sandhyas/.jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner -Dsonar.projectName=SIPCalculator-app -Dsonar.projectKey=SIPCalculator -Dsonar.java.binaries=target
+22:49:06.975 INFO  Scanner configuration file: /Users/sandhyas/.jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/conf/sonar-scanner.properties
+22:49:06.977 INFO  Project root configuration file: NONE
+22:49:06.988 INFO  SonarScanner CLI 6.1.0.4477
+22:49:06.989 INFO  Java 17.0.10 Eclipse Adoptium (64-bit)
+22:49:06.989 INFO  Mac OS X 14.6 aarch64
+22:49:07.007 INFO  User cache: /Users/sandhyas/.sonar/cache
+22:49:07.414 INFO  Communicating with SonarQube Server 9.9.6.92038
+22:49:07.660 INFO  Load global settings
+22:49:07.754 INFO  Load global settings (done) | time=94ms
+22:49:07.757 INFO  Server id: 147B411E-AZGFa0WK4yNs8UkEp0GD
+22:49:07.760 INFO  User cache: /Users/sandhyas/.sonar/cache
+22:49:07.762 INFO  Load/download plugins
+22:49:07.762 INFO  Load plugins index
+22:49:07.788 INFO  Load plugins index (done) | time=26ms
+22:49:07.839 INFO  Load/download plugins (done) | time=77ms
+22:49:08.111 INFO  Process project properties
+22:49:08.111 INFO  Process project properties (done) | time=0ms
+22:49:08.112 INFO  Execute project builders
+22:49:08.113 INFO  Execute project builders (done) | time=1ms
+22:49:08.115 INFO  Project key: SIPCalculator
+22:49:08.115 INFO  Base dir: /Users/sandhyas/.jenkins/workspace/Calculator
+22:49:08.115 INFO  Working dir: /Users/sandhyas/.jenkins/workspace/Calculator/.scannerwork
+22:49:08.119 INFO  Load project settings for component key: 'SIPCalculator'
+22:49:08.148 INFO  Load project settings for component key: 'SIPCalculator' (done) | time=29ms
+22:49:08.220 INFO  Auto-configuring with CI 'Jenkins'
+22:49:08.221 INFO  Load quality profiles
+22:49:08.337 INFO  Load quality profiles (done) | time=115ms
+22:49:08.341 INFO  Load active rules
+22:49:10.000 INFO  Load active rules (done) | time=1659ms
+22:49:10.004 INFO  Load analysis cache
+22:49:10.014 INFO  Load analysis cache (249 bytes) | time=10ms
+22:49:10.055 INFO  Load project repositories
+22:49:10.069 INFO  Load project repositories (done) | time=14ms
+22:49:10.089 INFO  Indexing files...
+22:49:10.089 INFO  Project configuration:
+22:49:10.476 INFO  12 files indexed
+22:49:10.477 INFO  15 files ignored because of scm ignore settings
+22:49:10.477 INFO  Quality profile for java: Sonar way
+22:49:10.477 INFO  Quality profile for web: Sonar way
+22:49:10.477 INFO  Quality profile for xml: Sonar way
+22:49:10.477 INFO  ------------- Run sensors on module SIPCalculator-app
+22:49:10.522 INFO  Load metrics repository
+22:49:10.544 INFO  Load metrics repository (done) | time=23ms
+22:49:11.269 INFO  Sensor JavaSensor [java]
+22:49:11.271 INFO  Configured Java source version (sonar.java.source): none
+22:49:11.273 INFO  JavaClasspath initialization
+22:49:11.274 INFO  JavaClasspath initialization (done) | time=1ms
+22:49:11.275 INFO  JavaTestClasspath initialization
+22:49:11.275 INFO  JavaTestClasspath initialization (done) | time=0ms
+22:49:11.279 INFO  Server-side caching is enabled. The Java analyzer will not try to leverage data from a previous analysis.
+22:49:11.280 INFO  Using ECJ batch to parse 5 Main java source files with batch size 107 KB.
+22:49:11.386 INFO  Starting batch processing.
+22:49:11.652 INFO  The Java analyzer cannot skip unchanged files in this context. A full analysis is performed for all files.
+22:49:11.869 INFO  100% analyzed
+22:49:11.870 INFO  Batch processing: Done.
+22:49:11.870 INFO  Did not optimize analysis for any files, performed a full analysis for all 5 files.
+22:49:11.871 WARN  Dependencies/libraries were not provided for analysis of SOURCE files. The 'sonar.java.libraries' property is empty. Verify your configuration, as you might end up with less precise results.
+22:49:11.871 WARN  Unresolved imports/types have been detected during analysis. Enable DEBUG mode to see them.
+22:49:11.871 WARN  Use of preview features have been detected during analysis. Enable DEBUG mode to see them.
+22:49:11.871 INFO  No "Test" source files to scan.
+22:49:11.871 INFO  No "Generated" source files to scan.
+22:49:11.871 INFO  Sensor JavaSensor [java] (done) | time=602ms
+22:49:11.871 INFO  Sensor JaCoCo XML Report Importer [jacoco]
+22:49:11.871 INFO  'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+22:49:11.872 INFO  No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+22:49:11.872 INFO  Sensor JaCoCo XML Report Importer [jacoco] (done) | time=1ms
+22:49:11.872 INFO  Sensor CSS Rules [javascript]
+22:49:16.164 WARN  Node.js version 22 is not recommended, you might experience issues. Please use a recommended version of Node.js [16, 18]
+22:49:16.167 INFO  1 source file to be analyzed
+22:49:16.252 INFO  1/1 source file has been analyzed
+22:49:16.253 INFO  Hit the cache for 0 out of 0
+22:49:16.253 INFO  Miss the cache for 0 out of 0
+22:49:16.253 INFO  Sensor CSS Rules [javascript] (done) | time=4381ms
+22:49:16.253 INFO  Sensor C# Project Type Information [csharp]
+22:49:16.254 INFO  Sensor C# Project Type Information [csharp] (done) | time=1ms
+22:49:16.254 INFO  Sensor C# Analysis Log [csharp]
+22:49:16.267 INFO  Sensor C# Analysis Log [csharp] (done) | time=13ms
+22:49:16.267 INFO  Sensor C# Properties [csharp]
+22:49:16.267 INFO  Sensor C# Properties [csharp] (done) | time=0ms
+22:49:16.267 INFO  Sensor SurefireSensor [java]
+22:49:16.268 INFO  parsing [/Users/sandhyas/.jenkins/workspace/Calculator/target/surefire-reports]
+22:49:16.299 INFO  Sensor SurefireSensor [java] (done) | time=32ms
+22:49:16.299 INFO  Sensor HTML [web]
+22:49:16.447 INFO  Sensor HTML [web] (done) | time=148ms
+22:49:16.447 INFO  Sensor XML Sensor [xml]
+22:49:16.448 INFO  1 source file to be analyzed
+22:49:16.527 INFO  1/1 source file has been analyzed
+22:49:16.527 INFO  Sensor XML Sensor [xml] (done) | time=80ms
+22:49:16.527 INFO  Sensor TextAndSecretsSensor [text]
+22:49:16.531 INFO  7 source files to be analyzed
+22:49:16.537 INFO  7/7 source files have been analyzed
+22:49:16.537 INFO  Sensor TextAndSecretsSensor [text] (done) | time=10ms
+22:49:16.537 INFO  Sensor VB.NET Project Type Information [vbnet]
+22:49:16.538 INFO  Sensor VB.NET Project Type Information [vbnet] (done) | time=1ms
+22:49:16.538 INFO  Sensor VB.NET Analysis Log [vbnet]
+22:49:16.546 INFO  Sensor VB.NET Analysis Log [vbnet] (done) | time=8ms
+22:49:16.546 INFO  Sensor VB.NET Properties [vbnet]
+22:49:16.547 INFO  Sensor VB.NET Properties [vbnet] (done) | time=1ms
+22:49:16.547 INFO  Sensor IaC Docker Sensor [iac]
+22:49:16.548 INFO  0 source files to be analyzed
+22:49:16.573 INFO  0/0 source files have been analyzed
+22:49:16.574 INFO  Sensor IaC Docker Sensor [iac] (done) | time=27ms
+22:49:16.576 INFO  ------------- Run sensors on project
+22:49:16.600 INFO  Sensor Analysis Warnings import [csharp]
+22:49:16.600 INFO  Sensor Analysis Warnings import [csharp] (done) | time=0ms
+22:49:16.600 INFO  Sensor Zero Coverage Sensor
+22:49:16.604 INFO  Sensor Zero Coverage Sensor (done) | time=4ms
+22:49:16.604 INFO  Sensor Java CPD Block Indexer
+22:49:16.612 INFO  Sensor Java CPD Block Indexer (done) | time=8ms
+22:49:16.616 INFO  CPD Executor 2 files had no CPD blocks
+22:49:16.616 INFO  CPD Executor Calculating CPD for 4 files
+22:49:16.619 INFO  CPD Executor CPD calculation finished (done) | time=3ms
+22:49:16.662 INFO  Analysis report generated in 41ms, dir size=143.1 kB
+22:49:16.681 INFO  Analysis report compressed in 19ms, zip size=31.0 kB
+22:49:16.791 INFO  Analysis report uploaded in 110ms
+22:49:16.807 INFO  ANALYSIS SUCCESSFUL, you can find the results at: http://localhost:9000/dashboard?id=SIPCalculator
+22:49:16.807 INFO  Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+22:49:16.807 INFO  More about the report processing at http://localhost:9000/api/ce/task?id=AZGKjJz94yNs8UkEp9_j
+22:49:17.737 INFO  Analysis total time: 9.840 s
+22:49:17.737 INFO  EXECUTION SUCCESS
+22:49:17.738 INFO  Total time: 10.779s
+[Pipeline] }
+[Pipeline] // withSonarQubeEnv
+[Pipeline] }
+[Pipeline] // withEnv
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
 [Pipeline] { (Docker Build & Tag)
-Stage "Docker Build & Tag" skipped due to earlier failure(s)
-[Pipeline] getContext
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] withDockerRegistry
+Using the existing docker config file.Removing blacklisted property: authsRemoving blacklisted property: credsStore$ docker login -u sandhyasankar -p ******** https://index.docker.io/v1/
+[Pipeline] // withDockerRegistry
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
@@ -321,5 +450,26 @@ Stage "Deploy" skipped due to earlier failure(s)
 [Pipeline] }
 [Pipeline] // node
 [Pipeline] End of Pipeline
-ERROR: script returned exit code 1
+java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: e5b5e541-4bb4-4b23-adbe-a6b00650d70a
+Caused: java.io.IOException: Cannot run program "docker": error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at hudson.Proc$LocalProc.<init>(Proc.java:252)
+	at hudson.Proc$LocalProc.<init>(Proc.java:221)
+	at hudson.Launcher$LocalLauncher.launch(Launcher.java:994)
+	at hudson.Launcher$ProcStarter.start(Launcher.java:506)
+	at hudson.Launcher$ProcStarter.join(Launcher.java:517)
+	at PluginClassLoader for docker-commons//org.jenkinsci.plugins.docker.commons.impl.RegistryKeyMaterialFactory.materialize(RegistryKeyMaterialFactory.java:102)
+	at PluginClassLoader for docker-workflow//org.jenkinsci.plugins.docker.workflow.AbstractEndpointStepExecution2.doStart(AbstractEndpointStepExecution2.java:53)
+	at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.GeneralNonBlockingStepExecution.lambda$run$0(GeneralNonBlockingStepExecution.java:77)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
 Finished: FAILURE

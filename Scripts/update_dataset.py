@@ -16,7 +16,7 @@ def extract_info(text):
     filepath = "Incidents/Incidents.csv"
     df = pd.read_csv(filepath)
     last_row = df.iloc[-1]
-
+    
     # Define patterns to extract specific pieces of information
     patterns = {
         "Problem Title": r"Error Title:\s*(.*)",
