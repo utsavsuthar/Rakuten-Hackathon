@@ -1,0 +1,29 @@
+[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[INFO] BUILD SUCCESS
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+ERROR: docker login failed
+Finished: FAILURE
+Stage: Deploy - Status: FAILURE
+Finished: FAILURE

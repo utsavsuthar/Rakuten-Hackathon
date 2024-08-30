@@ -41,7 +41,9 @@ def extract_info(text):
         "Primary Error": info.get("Primary Error", ""),
         "Solution": info.get("Solution", "")
     }
+    # print(new_data)
     df = df.astype('object')
+
 
     # Ensure the new columns are added if they are missing
     # for column in new_data.keys():
@@ -62,3 +64,27 @@ def extract_info(text):
     df.to_csv(filepath, index=False)
 
     print("Updated the last row with new information.")
+
+
+input_data = '''
+Here is the analysis of the input:
+
+**Error Title:** AdoptOpenJDK Installer Error
+
+**Detailed Description:** The Jenkins CI/CD pipeline log provided shows that the pipeline failed during the "Declarative: Tool Install" stage. The error message indicates that the AdoptOpenJDK installer was unable to locate a binary for the selected combination of JDK version (jdk8u422-b05.1), platform (LINUX), and CPU architecture (amd64).
+
+**Primary Error:** The main error occurred during the "Declarative: Tool Install" stage when the AdoptOpenJDK installer tried to perform the installation.
+
+**Severity:** High
+
+**Possible Solutions:**
+
+1. **Check JDK Version:** Ensure that the specified JDK version (jdk8u422-b05.1) is available and compatible with the platform (LINUX) and CPU architecture (amd64).
+2. **Verify Installer Configuration:** Review the AdoptOpenJDK installer configuration to ensure that it is correctly set up to download and install the required JDK version.
+3. **Check Network Connectivity:** Verify that the Jenkins agent has a stable network connection to download the required JDK version.
+
+Let me know if you need help with the next input!
+Updated the last row with new information.
+'''
+
+extract_info(input_data)

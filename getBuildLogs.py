@@ -15,7 +15,7 @@ job_name = 'calculator'
 server = jenkins.Jenkins(jenkins_url, username=username, password=password)
 
 # Get last build number and console output
-# last_build_number = server.get_job_info(job_name)['lastCompletedBuild']['number']
+last_build_number = server.get_job_info(job_name)['lastCompletedBuild']['number']
 last_build_number = 9
 output_info = server.get_build_console_output(job_name, last_build_number)
 
@@ -63,6 +63,7 @@ with open(file_path_console, 'w') as output_file:
         output_file.write(entry)
 dataset_path = 'Incidents/Incidents.csv'
 data = pd.read_csv(dataset_path)
+# print(data)
 incident_number = data.shape[0] + 1
 
 # Data to append (with some columns missing)
@@ -72,9 +73,8 @@ new_row = [incident_number, 'Rakuten','','',result,'','','']  # Missing the thir
 
 
 # Open the file in append mode
-with open(dataset_path, mode='a', newline='\n') as file:
+with open(dataset_path, mode='a+', newline='\n') as file:
     writer = csv.writer(file)
     writer.writerow(new_row)  # Write the new row
-
 
 subprocess.run(["streamlit", "run", "frontend.py"])
