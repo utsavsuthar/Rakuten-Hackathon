@@ -133,6 +133,13 @@ def function3():
 
     # Display the DataFrame with preserved newlines
     display_dataframe(formatted_data_df)
+    st.write("Are you satisfied with the output?")
+    st.button("Satisfactory")
+       
+    st.button("Just Fine")
+
+    st.button("UnSatisfactory")
+        
     return ""
 
 # Center the image using markdown

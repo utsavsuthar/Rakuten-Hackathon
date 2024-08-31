@@ -1371,3 +1371,57 @@ Finished: FAILURE
 Stage: Deploy - Status: FAILURE
 Finished: FAILURE
 ",,,
+27,Rakuten, Docker Not Found, High,"[Pipeline] { (Declarative: Tool Install)
+Stage: Declarative: Tool Install - Status: SUCCESS
+[Pipeline] { (Git-Checkout)
+Stage: Git-Checkout - Status: SUCCESS
+[Pipeline] { (Compile)
+[INFO] BUILD SUCCESS
+Stage: Compile - Status: SUCCESS
+[Pipeline] { (Build)
+[INFO] BUILD SUCCESS
+Stage: Build - Status: SUCCESS
+[Pipeline] { (Test)
+[INFO] BUILD SUCCESS
+Stage: Test - Status: SUCCESS
+[Pipeline] { (Sonar-Analytics)
+Stage: Sonar-Analytics - Status: SUCCESS
+[Pipeline] { (Docker Build & Tag)
+Stage: Docker Build & Tag - Status: SUCCESS
+[Pipeline] { (Trivy Image Scan)
+Skipped Stage: Trivy Image Scan
+Stage: Trivy Image Scan - Status: SUCCESS
+[Pipeline] { (Docker Push Image)
+Skipped Stage: Docker Push Image
+Stage: Docker Push Image - Status: SUCCESS
+[Pipeline] { (Deploy)
+Skipped Stage: Deploy
+java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:295)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:225)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126)
+Also:   org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: e5b5e541-4bb4-4b23-adbe-a6b00650d70a
+Caused: java.io.IOException: Cannot run program ""docker"": error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089)
+	at hudson.Proc$LocalProc.<init>(Proc.java:252)
+	at hudson.Proc$LocalProc.<init>(Proc.java:221)
+	at hudson.Launcher$LocalLauncher.launch(Launcher.java:994)
+	at hudson.Launcher$ProcStarter.start(Launcher.java:506)
+	at hudson.Launcher$ProcStarter.join(Launcher.java:517)
+	at PluginClassLoader for docker-commons//org.jenkinsci.plugins.docker.commons.impl.RegistryKeyMaterialFactory.materialize(RegistryKeyMaterialFactory.java:102)
+	at PluginClassLoader for docker-workflow//org.jenkinsci.plugins.docker.workflow.AbstractEndpointStepExecution2.doStart(AbstractEndpointStepExecution2.java:53)
+	at PluginClassLoader for workflow-step-api//org.jenkinsci.plugins.workflow.steps.GeneralNonBlockingStepExecution.lambda$run$0(GeneralNonBlockingStepExecution.java:77)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Finished: FAILURE
+Stage: Deploy - Status: FAILURE
+Finished: FAILURE
+"," The Jenkins CI/CD pipeline log provided shows that several stages of the pipeline were executed successfully, including stages like ""Tool Install,"" ""Git-Checkout,"" ""Compile,"" ""Build,"" ""Test,"" ""Sonar-Analytics,"" and ""Docker Build & Tag."" However, the pipeline encountered issues during the ""Deploy"" stage, leading to a failure."," The main error occurred during the ""Deploy"" stage when Jenkins tried to run a process that required Docker. The specific error message is: java.io.IOException: Cannot run program ""docker"": error=2, No such file or directory. This error indicates that Jenkins attempted to execute the docker command, but the command was not found, meaning Docker is either not installed on the agent executing the pipeline, or the path to the Docker executable is not correctly set.","
+
+1. Check Docker Installation: Ensure that Docker is installed on the Jenkins agent or server where the pipeline is executed. You can check this by running `docker --version` on the command line of the Jenkins agent. If Docker is not installed, install it according to your system's package management guidelines.
+2. Set Docker Path: If Docker is installed but the error persists, it may be due to an incorrect or missing path to the Docker executable. Ensure that the path to the Docker binary is included in the system’s PATH environment variable."
